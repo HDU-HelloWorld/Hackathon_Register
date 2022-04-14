@@ -40,12 +40,16 @@ export default {
 
 <style lang='less' scoped>
   .top{
+    min-width: 1000px;
     width: 100%;
+    min-width: 800px;
+    display: inline-block ;
     background-color: white;
     border-bottom: 1px white solid;
     box-shadow: 0 0 50px rgba(0, 0, 0, .9);
     font-size: 28px;
     .top-barrer{
+      min-width: 1000px;
       width: 100%;
       height: 110px;
       line-height: 110px;
@@ -85,8 +89,10 @@ export default {
       margin-top: 110px;
       display: block;
       width: 100%;
+      min-width: 1000px;
     }
     .top-bottom{
+      min-width: 1000px;
       width: 100%;
       height: 80px;
       display: flex;
@@ -95,6 +101,7 @@ export default {
       background: linear-gradient(200deg,#00cbf6,#66a6ff);
       margin-bottom: 8px;
       li{
+        min-width: 130px;
         margin-top: 20px;
         margin-left: 50px;
         height: 40px;
