@@ -3,7 +3,7 @@
     <div class="top-barrer">
       <div class="left">HACKATHON</div>
       <ul class="right">
-        <li>Hackathon简介</li>
+        <li @click="showDetail">Hackathon简介</li>
         <li>比赛介绍</li>
         <li>参赛须知</li>
         <li>赛程安排</li>
@@ -40,7 +40,7 @@ export default {
 <style lang='less' scoped>
   .top{
     width: 100%;
-    height: 440px;
+    // height: 440px;
     background-color: white;
     border-bottom: 1px white solid;
     box-shadow: 0 0 50px rgba(0, 0, 0, .9);
@@ -88,6 +88,7 @@ export default {
       list-style-type: none;
       margin-top: 5px;
       background: linear-gradient(200deg,#00cbf6,#66a6ff);
+      margin-bottom: 8px;
       li{
         margin-top: 20px;
         margin-left: 50px;
