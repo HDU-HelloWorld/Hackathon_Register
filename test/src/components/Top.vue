@@ -41,13 +41,14 @@ export default {
 <style lang='less' scoped>
   .top{
     width: 100%;
-    // height: 440px;
     background-color: white;
     border-bottom: 1px white solid;
     box-shadow: 0 0 50px rgba(0, 0, 0, .9);
+    font-size: 28px;
     .top-barrer{
       width: 100%;
       height: 110px;
+      line-height: 110px;
       display: flex;
       justify-content: space-between;
       position: fixed;
@@ -58,21 +59,24 @@ export default {
       .left{
         width: 150px;
         margin-left: 50px;
-        line-height: 90px;
+        height: 50px;
+        line-height: 50px;
+        margin-top: 20px;
+        text-align: center;
       }
       .right{
         width: 850px;
+        height: 50px;
+        // background-color: red;
         display: flex;
         justify-content: space-evenly;
         list-style-type: none;
         line-height: 50px;
+        margin-top: 30px;
         li{
-          margin-top: 20px;
           height: 50px;
-          transition:0.5;
           &:hover{
             border-bottom: 5px solid black;
-            transition:0.5;
           }
         }
       }
@@ -94,6 +98,7 @@ export default {
         margin-top: 20px;
         margin-left: 50px;
         height: 40px;
+        line-height: 40px;
         width: 130px;
         text-align: center;
         &:hover{
@@ -102,6 +107,7 @@ export default {
         }
       }
       .btn{
+        font-size: 28px;
         margin-top: 8px;
         width: 240px;
         height: 60px;
@@ -152,3 +158,4 @@ export default {
     }
   }
 </style>
+
