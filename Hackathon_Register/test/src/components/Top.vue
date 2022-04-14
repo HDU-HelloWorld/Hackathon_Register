@@ -3,11 +3,7 @@
     <div class="top-barrer">
       <div class="left">HACKATHON</div>
       <ul class="right">
-<<<<<<< HEAD
-        <li @click="showDetail">Hackathon简介</li>
-=======
         <li>Hackathon简介</li>
->>>>>>> f32fec34c6783c142321d390fe58d12b6bec9067
         <li>比赛介绍</li>
         <li>参赛须知</li>
         <li>赛程安排</li>
@@ -28,7 +24,6 @@
 
 <script>
 export default {
-<<<<<<< HEAD
   data () {
     return {
 
@@ -39,9 +34,6 @@ export default {
       this.$bus.$emit('scrool')
     }
   }
-=======
-
->>>>>>> f32fec34c6783c142321d390fe58d12b6bec9067
 }
 </script>
 
