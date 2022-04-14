@@ -11,5 +11,8 @@ new Vue({
   el: '#app',
   router,
   components: { App },
+  beforeCreate () {
+    Vue.prototype.$bus = this// 安装全局事件总线负责组件与组件间的通信
+  },
   template: '<App/>'
 })
