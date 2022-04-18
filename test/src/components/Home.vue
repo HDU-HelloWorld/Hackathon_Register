@@ -1,13 +1,12 @@
 <template>
   <div>
     <Top/>
-    <HackIntro/>
   </div>
 </template>
 
 <script>
-import HackIntro from '../HackIntro.vue'
-import Top from '../Top.vue'
+import HackIntro from './HackIntro.vue'
+import Top from './Top.vue'
 export default {
   components: { Top, HackIntro }
 }

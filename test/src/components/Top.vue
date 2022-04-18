@@ -15,7 +15,7 @@
       <li>比赛流程</li>
       <li>比赛规则</li>
       <li>评分规则</li>
-      <button class="btn">点我报名
+      <button class="btn" @click="changerouter">点我报名
         <span></span><span></span><span></span><span></span>
       </button>
     </div>
@@ -33,6 +33,11 @@ export default {
   methods: {
     showDetail () {
       this.$bus.$emit('scrool')
+    },
+    changerouter () {
+      this.$router.replace({
+        name: 'login'
+      })
     }
   }
 }
