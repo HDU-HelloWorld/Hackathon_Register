@@ -1,16 +1,15 @@
 <template>
-  <div class="wrapper">
-    <div class="input-data">
+    <div :class="selection">
       <input
       :type="type"
       required
       :rule="rule"
       v-model="content"
+      @click="iptrad"
       >
       <div class="underline"></div>
       <label>{{label}}</label>
     </div>
-</div>
 </template>
 
 <script>
@@ -19,26 +18,27 @@ export default {
   props: ['label', 'type', 'rule'],
   data () {
     return {
-      content: ''
+      content: '',
+      selection: 'input-data'
+    }
+  },
+  methods: {
+    iptrad () {
+      if (this.type === 'checkbox') {
+        this.selection = 'checkst'
+      }
     }
   }
 }
 </script>
 
 <style>
-  .wrapper{
-    width: 450px;
-    background-color: #fff;
-    padding: 40px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-}
-.wrapper .input-data{
+.input-data{
     position:relative;
     width: 100%;
     height: 40px;
 }
-.wrapper .input-data input{
+.input-data input{
     width: 100%;
     height: 100%;
     border:none;
@@ -46,14 +46,14 @@ export default {
     font-size: 17px;
     border-bottom: 2px solid #c0c0c0;
 }
-.wrapper .input-data input:focus ~ label,
-.wrapper .input-data input:valid ~ label{
+.input-data input:focus ~ label,
+.input-data input:valid ~ label{
     transform: translateY(-25px);
     font-size: 15px;
     color: black;
     font-weight: bold;
 }
-.wrapper .input-data label{
+.input-data label{
     position: absolute;
     bottom: 10px;
     left: 0px;
@@ -61,7 +61,7 @@ export default {
     pointer-events: none;
     transition: all 0.3s ease;
 }
-.wrapper .input-data .underline{
+.input-data .underline{
     position: absolute;
     bottom: 0px;
     height: 2px;
@@ -70,8 +70,31 @@ export default {
     transform: scaleX(0);
     transition: all 0.3s ease;
 }
-.wrapper .input-data input:focus ~ .underline,
-.wrapper .input-data input:valid ~ .underline{
+.input-data input:focus ~ .underline,
+.input-data input:valid ~ .underline{
     transform: scaleX(1);
+}
+.checkst{
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #c9c9c9;
+  border-radius: 50%;
+  outline: none;
+  margin-right: 22px;
+  cursor: pointer;
+}
+.checkst input:checked+label::after{
+    display: inline-block;
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgba(56, 85, 127, 1);
 }
 </style>
