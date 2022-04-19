@@ -19,12 +19,13 @@ export default {
   data () {
     return {
       content: '',
-      selection: 'input-data'
+      selection: 'input-data',
+      inpType: this.type
     }
   },
   methods: {
     iptrad () {
-      if (this.type === 'checkbox') {
+      if (this.inpType === 'checkbox') {
         this.selection = 'checkst'
       }
     }
