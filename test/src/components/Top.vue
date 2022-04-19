@@ -13,8 +13,8 @@
     <img src="../assets/1.png">
     <div class="top-bottom">
       <li>比赛流程</li>
-      <li>比赛规则</li>
-      <li>评分规则</li>
+      <li><router-link to="/competerule">比赛规则</router-link></li>
+      <li><router-link to="/evaluaterule">评分规则</router-link></li>
       <button class="btn" @click="changerouter">点我报名
         <span></span><span></span><span></span><span></span>
       </button>
@@ -44,6 +44,10 @@ export default {
 </script>
 
 <style lang='less' scoped>
+  a {
+    text-decoration: none;
+    color: black;
+  }
   .top{
     min-width: 1000px;
     width: 100%;
