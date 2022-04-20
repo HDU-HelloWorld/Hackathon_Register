@@ -15,7 +15,7 @@
 <script>
 export default {
   name: 'ipt',
-  props: ['label', 'type', 'rule', 'isShow'],
+  props: ['label', 'type', 'rule'],
   data () {
     return {
       content: '',

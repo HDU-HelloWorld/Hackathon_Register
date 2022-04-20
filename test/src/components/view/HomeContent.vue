@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <hack-intro />
-    <compiti-intro />
-    <plan />
-    <notice />
-    <support />
+  <div class="wrapper">
+    <hack-intro class="hackintro"></hack-intro>
+    <compiti-intro class="compitiintro"></compiti-intro>
+    <plan class="plan"></plan>
+    <notice class="notice"></notice>
+    <support class="support"></support>
   </div>
 </template>
 
@@ -20,6 +20,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="less">
+  .wrapper{
+    width: 100%;
+    margin: 100px auto;
+  }
 </style>
