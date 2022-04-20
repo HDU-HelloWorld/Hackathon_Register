@@ -47,14 +47,13 @@
           type="checkbox"
           rule="^.{6,16}$"
           style="margin:25px 10px "
-          v-model="flag"
         />
         <ipt
-              label="队名"
-              type="text"
-              rule="^.{6,16}$"
-              style="margin:25px 10px "
-              v-show="flag"
+          label="队名"
+          type="text"
+          rule="^.{6,16}$"
+          style="margin:25px 10px "
+          v-show="panduan"
         />
       </div>
     </div>
@@ -68,11 +67,14 @@ export default {
   name: 'login',
   data () {
     return {
-      flag: false
-      // checked: this.flag
+      panduan: ''
     }
+  },
+  mounted () {
+    this.$bus.$on('chaocao', (data) => {
+      this.panduan = data
+    })
   }
-//   methods: {
 }
 </script>
 
