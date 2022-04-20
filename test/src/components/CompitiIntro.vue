@@ -109,11 +109,14 @@ export default {
         box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
       }
       .spe{
-        color: rgb(108, 7, 7);
+        font-weight: bold;
+        background: rgba(167, 237, 173, 0.4);
+        // text-align: center;
       }
       .content{
         background: rgba(241, 197, 242, 0.6);
         box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+        border-radius: 10px;
       }
     }
   }
