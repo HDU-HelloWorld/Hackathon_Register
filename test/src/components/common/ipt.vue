@@ -5,7 +5,6 @@
       required
       :rule="rule"
       v-model="content"
-      @click="iptrad"
       >
       <div class="underline"></div>
       <label>{{label}}</label>
@@ -19,15 +18,19 @@ export default {
   data () {
     return {
       content: '',
-      selection: 'input-data'
+      selection: 'input-data',
+      ipType: this.type
     }
   },
   methods: {
     iptrad () {
-      if (this.type === 'checkbox') {
+      if (this.ipType === 'checkbox') {
         this.selection = 'checkst'
       }
     }
+  },
+  mounted: function () {
+    this.iptrad()
   }
 }
 </script>
@@ -63,10 +66,10 @@ export default {
 }
 .input-data .underline{
     position: absolute;
-    bottom: 0px;
+    bottom: -2px;
     height: 2px;
     width: 100%;
-    background-color: #2c6fdb;
+    background-color:   #2c6fdb;
     transform: scaleX(0);
     transition: all 0.3s ease;
 }
@@ -74,27 +77,29 @@ export default {
 .input-data input:valid ~ .underline{
     transform: scaleX(1);
 }
+
 .checkst{
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  padding: 0;
-  background-color: #fff;
-  border: 1px solid #c9c9c9;
-  border-radius: 50%;
-  outline: none;
-  margin-right: 22px;
-  cursor: pointer;
+    position:relative;
+    left: 50px ;
+    width: 100%;
+    height: 20px;
 }
-.checkst input:checked+label::after{
-    display: inline-block;
-    content: "";
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+.checkst input{
+    margin: 10px 10px 0px 35%;
+    height: 15px;
+    zoom:120%;
+}
+.checkst label{
     position: absolute;
-    left: 4px;
-    bottom: 4px;
-    background-color: rgba(56, 85, 127, 1);
+    bottom: -10px;
+    left: 0px;
+    color: #808080;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.checkst input:valid ~ label{
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
 }
 </style>

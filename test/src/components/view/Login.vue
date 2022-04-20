@@ -29,7 +29,7 @@
       />
       <div class="floor">
         <ipt
-          label="所在高校"
+          label="所在学院"
           type="text"
           rule="^.{6,16}$"
           style="margin:25px 10px "
@@ -47,6 +47,14 @@
           type="checkbox"
           rule="^.{6,16}$"
           style="margin:25px 10px "
+          v-model="flag"
+        />
+        <ipt
+              label="队名"
+              type="text"
+              rule="^.{6,16}$"
+              style="margin:25px 10px "
+              v-show="flag"
         />
       </div>
     </div>
@@ -57,7 +65,14 @@
 import ipt from '../common/ipt.vue'
 export default {
   components: { ipt },
-  name: 'login'
+  name: 'login',
+  data () {
+    return {
+      flag: false
+      // checked: this.flag
+    }
+  }
+//   methods: {
 }
 </script>
 
