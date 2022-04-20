@@ -3,18 +3,18 @@
     <div class="top-barrer">
       <div class="left">HACKATHON</div>
       <ul class="right">
-        <li @click="showDetail">Hackathon简介</li>
-        <li>比赛介绍</li>
-        <li>参赛须知</li>
-        <li>赛程安排</li>
-        <li>大赛支持</li>
+        <button class="right-btn" @click="showDetail">Hackathon简介</button>
+        <button class="right-btn">比赛介绍</button>
+        <button class="right-btn">参赛须知</button>
+        <button class="right-btn">赛程安排</button>
+        <button class="right-btn">大赛支持</button>
       </ul>
     </div>
     <img src="../assets/1.png">
     <div class="top-bottom">
-      <li>比赛流程</li>
-      <li><router-link to="/competerule">比赛规则</router-link></li>
-      <li><router-link to="/evaluaterule">评分规则</router-link></li>
+      <button class="bottom-left">比赛流程</button>
+      <button class="bottom-left" @click="changeroutercom">比赛规则</button>
+      <button class="bottom-left" @click="changeroutermark">评分规则</button>
       <button class="btn" @click="changerouter">点我报名
         <span></span><span></span><span></span><span></span>
       </button>
@@ -37,6 +37,16 @@ export default {
     changerouter () {
       this.$router.replace({
         name: 'login'
+      })
+    },
+    changeroutercom () {
+      this.$router.replace({
+        name: 'competerule'
+      })
+    },
+    changeroutermark () {
+      this.$router.replace({
+        name: 'evaluaterule'
       })
     }
   }
@@ -86,8 +96,11 @@ export default {
         list-style-type: none;
         line-height: 50px;
         margin-top: 30px;
-        li{
+        .right-btn{
           height: 50px;
+          border: none;
+          background-color: transparent;
+          outline: none;
           &:hover{
             border-bottom: 5px solid black;
           }
@@ -109,7 +122,10 @@ export default {
       margin-top: 5px;
       background: linear-gradient(200deg,#00cbf6,#66a6ff);
       margin-bottom: 8px;
-      li{
+      .bottom-left{
+        border: none;
+        outline: none;
+        background-color: transparent ;
         min-width: 130px;
         margin-top: 20px;
         margin-left: 50px;

@@ -19,12 +19,12 @@ export default new Router({
       component: login
     },
     {
-      name: competerule,
+      name: 'competerule',
       path: '/competerule',
       component: competerule
     },
     {
-      name: evaluaterule,
+      name: 'evaluaterule',
       path: '/evaluaterule',
       component: evaluaterule
     }
