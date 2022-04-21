@@ -30,7 +30,7 @@ export default {
       }
     },
     SendContent () {
-      this.$bus.$emit('chaocao', this.content)
+      this.$bus.$emit('chaocao', !this.content)
     }
   },
   mounted: function () {
@@ -86,16 +86,16 @@ export default {
     position:relative;
     left: 50px ;
     width: 100%;
-    height: 20px;
+    height: 40px;
 }
 .checkst input{
-    margin: 10px 10px 0px 35%;
+    margin: 10px 10px 0px 60px;
     height: 15px;
     zoom:120%;
 }
 .checkst label{
     position: absolute;
-    bottom: -10px;
+    bottom: 10px;
     left: 0px;
     color: #808080;
     pointer-events: none;
