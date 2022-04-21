@@ -5,14 +5,14 @@
         <ipt
           label="姓名"
           type="text"
-          rule="^[\u0391-\uFFE5A-Za-z]+$"
+          rule="^.{2,10}$"
           style="margin:25px 10px "
           @inputChange="res => model.name = res "
           />
         <ipt
           label="年龄"
           type="text"
-          rule="^\d+$|^\d+[.]?\d+$"
+          rule="^-?\d+$ "
           style="margin:25px 10px "
           @inputChange="res => model.age = res "
           />
@@ -20,14 +20,14 @@
       <ipt
           label="电话"
           type="text"
-          rule="^[1][3,4,5,6,7,8,9][0-9]{9}$"
+          rule="^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$"
           style="margin:25px 10px "
           @inputChange="res => model.phone = res "
       />
       <ipt
           label="邮箱"
           type="text"
-          rule="^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$"
+          rule="^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"
           style="margin:25px 10px "
           @inputChange="res => model.email = res "
       />
@@ -35,14 +35,14 @@
         <ipt
           label="所在学院"
           type="text"
-          rule="^[\u0391-\uFFE5A-Za-z]+$"
+          rule="^[\u4e00-\u9fa5],{0,}$ "
           style="margin:25px 10px "
           @inputChange="res => model.college = res "
         />
         <ipt
           label="所在年级"
           type="text"
-          rule="^[\u0391-\uFFE5A-Za-z]+$"
+          rule="^[\u4e00-\u9fa5],{0,}$ "
           style="margin:25px 10px "
           @inputChange="res => model.grader = res "
         />
