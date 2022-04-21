@@ -56,6 +56,14 @@
           v-show="panduan"
         />
       </div>
+       <div class="floor">
+        <ipt
+          label="你的个人介绍"
+          type="text"
+          rule="^.{6,16}$"
+          style="margin:25px 10px "
+        />
+      </div>
     </div>
   </div>
 </template>
