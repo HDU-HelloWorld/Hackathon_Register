@@ -12,7 +12,7 @@
     </div>
     <img src="../assets/1.png">
     <div class="top-bottom">
-      <button class="bottom-left">比赛流程</button>
+      <button class="bottom-left" @click="changeprocess">比赛流程</button>
       <button class="bottom-left" @click="changeroutercom">比赛规则</button>
       <button class="bottom-left" @click="changeroutermark">评分规则</button>
       <button class="btn" @click="changerouter">点我报名
@@ -48,6 +48,11 @@ export default {
     changeroutercom () {
       this.$router.replace({
         name: 'competerule'
+      })
+    },
+    changeprocess () {
+      this.$router.replace({
+        name: 'process'
       })
     },
     changeroutermark () {

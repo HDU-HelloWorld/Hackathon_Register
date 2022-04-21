@@ -5,6 +5,7 @@ import HomeContent from '../components/view/HomeContent'
 import login from '../components/view/login'
 import competerule from '../components/view/competerule'
 import evaluaterule from '../components/view/evaluaterule'
+import process from '../components/view/process'
 Vue.use(Router)
 
 export default new Router({
@@ -27,6 +28,11 @@ export default new Router({
       name: 'evaluaterule',
       path: '/evaluaterule',
       component: evaluaterule
+    },
+    {
+      name: 'process',
+      path: '/process',
+      component: process
     }
   ]
 })
