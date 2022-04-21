@@ -33,7 +33,10 @@ export default {
       this.$bus.$emit('chaocao', !this.content)
     },
     hander () {
-      this.$emit('inputChange', this.content)
+      const rue=new RegExp(this.rule)
+      if(rue.test(this.content)){
+        this.$emit("inputchange",this.content)
+      }
     }
   },
   mounted: function () {
