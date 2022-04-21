@@ -47,11 +47,6 @@
           type="checkbox"
           rule="^.{6,16}$"
           style="margin:25px 10px "
-<<<<<<< HEAD
-          id="checkbox"
-          @click="change"
-=======
->>>>>>> f4e31c6695306cb79d6a1faa9d6a5c72a28301f3
         />
         <ipt
           label="队名"
@@ -80,22 +75,7 @@ export default {
   name: 'login',
   data () {
     return {
-<<<<<<< HEAD
-    }
-  },
-  methods: {
-    // change () {
-    //   console.log('hello')
-    // }
-  },
-  computed: {
-    flag: {
-      get () {
-        return this.checkbox.checked
-      }
-=======
       panduan: ''
->>>>>>> f4e31c6695306cb79d6a1faa9d6a5c72a28301f3
     }
   },
   mounted () {
