@@ -4,8 +4,8 @@
       <div class="left">HACKATHON</div>
       <ul class="right">
         <button class="right-btn" @click="showDetail">Hackathon简介</button>
-        <button class="right-btn">比赛介绍</button>
-        <button class="right-btn">参赛须知</button>
+        <button class="right-btn" @click="showDetail02">比赛介绍</button>
+        <button class="right-btn" @click="showDetail03">参赛须知</button>
         <button class="right-btn">赛程安排</button>
         <button class="right-btn">大赛支持</button>
       </ul>
@@ -33,6 +33,12 @@ export default {
   methods: {
     showDetail () {
       this.$bus.$emit('scrool')
+    },
+    showDetail02 () {
+      this.$bus.$emit('scrool-2')
+    },
+    showDetail03 () {
+      this.$bus.$emit('scrool-3')
     },
     changerouter () {
       this.$router.replace({

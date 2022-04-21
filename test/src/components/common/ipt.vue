@@ -5,6 +5,7 @@
       required
       :rule="rule"
       v-model="content"
+      @click="SendContent"
       >
       <div class="underline"></div>
       <label>{{label}}</label>
@@ -27,6 +28,9 @@ export default {
       if (this.ipType === 'checkbox') {
         this.selection = 'checkst'
       }
+    },
+    SendContent () {
+      this.$bus.$emit('chaocao', this.content)
     }
   },
   mounted: function () {
