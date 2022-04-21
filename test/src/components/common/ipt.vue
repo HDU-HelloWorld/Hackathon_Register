@@ -31,10 +31,18 @@ export default {
     },
     SendContent () {
       this.$bus.$emit('chaocao', !this.content)
+    },
+    hander () {
+      this.$emit('inputChange', this.content)
     }
   },
   mounted: function () {
     this.iptrad()
+  },
+  watch: {
+    content () {
+      this.hander()
+    }
   }
 }
 </script>
