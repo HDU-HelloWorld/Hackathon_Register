@@ -5,14 +5,14 @@
         <ipt
           label="姓名"
           type="text"
-          rule="^.{6,16}$"
+          rule="^[\u0391-\uFFE5A-Za-z]+$"
           style="margin:25px 10px "
           @inputChange="res => model.name = res "
           />
         <ipt
           label="年龄"
           type="text"
-          rule="^.{6,16}$"
+          rule="^\d+$|^\d+[.]?\d+$"
           style="margin:25px 10px "
           @inputChange="res => model.age = res "
           />
@@ -20,14 +20,14 @@
       <ipt
           label="电话"
           type="text"
-          rule="^.{6,16}$"
+          rule="^[1][3,4,5,6,7,8,9][0-9]{9}$"
           style="margin:25px 10px "
           @inputChange="res => model.phone = res "
       />
       <ipt
           label="邮箱"
           type="text"
-          rule="^.{6,16}$"
+          rule="^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$"
           style="margin:25px 10px "
           @inputChange="res => model.email = res "
       />
@@ -35,14 +35,14 @@
         <ipt
           label="所在学院"
           type="text"
-          rule="^.{6,16}$"
+          rule="^[\u0391-\uFFE5A-Za-z]+$"
           style="margin:25px 10px "
           @inputChange="res => model.college = res "
         />
         <ipt
           label="所在年级"
           type="text"
-          rule="^.{6,16}$"
+          rule="^[\u0391-\uFFE5A-Za-z]+$"
           style="margin:25px 10px "
           @inputChange="res => model.grader = res "
         />
@@ -67,7 +67,7 @@
         <ipt
           label="你的个人介绍"
           type="text"
-          rule="^.{6,16}$"
+          rule="^.{0,500}$"
           style="margin:25px 10px "
           @inputChange="res => model.intro = res "
         />
@@ -104,7 +104,23 @@ export default {
   },
   methods: {
     submit () {
-      console.log(this.model)
+      let rulg = /^.{6,16}/;
+      if (
+        rulg.test(this.model.name) &&
+        rulg.test(this.model.age) &&
+        rulg.test(this.model.phone)&&
+        rulg.test(this.model.email)&&
+        rulg.test(this.model.college)&&
+        rulg.test(this.model.grader)&&
+        rulg.test(this.model.teamname)&&
+        rulg.test(this.model.intro)
+      ) {
+        alert("注册成功")
+        console.log(this.model)
+      } else {
+        alert("注册失败")
+      }
+      
     }
   }
 }
