@@ -104,23 +104,22 @@ export default {
   },
   methods: {
     submit () {
-      let rulg = /^.{6,16}/;
+      let rulg = /^.{6,16}/
       if (
         rulg.test(this.model.name) &&
         rulg.test(this.model.age) &&
-        rulg.test(this.model.phone)&&
-        rulg.test(this.model.email)&&
-        rulg.test(this.model.college)&&
-        rulg.test(this.model.grader)&&
-        rulg.test(this.model.teamname)&&
+        rulg.test(this.model.phone) &&
+        rulg.test(this.model.email) &&
+        rulg.test(this.model.college) &&
+        rulg.test(this.model.grader) &&
+        rulg.test(this.model.teamname) &&
         rulg.test(this.model.intro)
       ) {
-        alert("注册成功")
+        alert('注册成功')
         console.log(this.model)
       } else {
-        alert("注册失败")
+        alert('注册失败')
       }
-      
     }
   }
 }

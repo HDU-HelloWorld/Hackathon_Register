@@ -1,6 +1,6 @@
 <template>
   <div class="hackintro">
-    <h1>Hackathon简介
+    <h1 ref="title" @click="showlocation">Hackathon简介
       <hr>
     </h1>
     <div class="exp">
@@ -33,6 +33,9 @@ export default {
         'top': 480, // emmm之后应该是写成一个变量的形式改变
         'behavior': 'smooth'
       })
+    },
+    showlocation () {
+      alert(this.refs.title.offset().top)
     }
   }
 }
