@@ -47,6 +47,11 @@
           type="checkbox"
           rule="^.{6,16}$"
           style="margin:25px 10px "
+<<<<<<< HEAD
+          id="checkbox"
+          @click="change"
+=======
+>>>>>>> f4e31c6695306cb79d6a1faa9d6a5c72a28301f3
         />
         <ipt
           label="队名"
@@ -54,6 +59,14 @@
           rule="^.{6,16}$"
           style="margin:25px 10px "
           v-show="panduan"
+        />
+      </div>
+       <div class="floor">
+        <ipt
+          label="你的个人介绍"
+          type="text"
+          rule="^.{6,16}$"
+          style="margin:25px 10px "
         />
       </div>
     </div>
@@ -67,7 +80,22 @@ export default {
   name: 'login',
   data () {
     return {
+<<<<<<< HEAD
+    }
+  },
+  methods: {
+    // change () {
+    //   console.log('hello')
+    // }
+  },
+  computed: {
+    flag: {
+      get () {
+        return this.checkbox.checked
+      }
+=======
       panduan: ''
+>>>>>>> f4e31c6695306cb79d6a1faa9d6a5c72a28301f3
     }
   },
   mounted () {
@@ -76,6 +104,7 @@ export default {
     })
   }
 }
+
 </script>
 
 <style>
