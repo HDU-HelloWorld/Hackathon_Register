@@ -47,7 +47,8 @@
           type="checkbox"
           rule="^.{6,16}$"
           style="margin:25px 10px "
-          v-model="flag"
+          id="checkbox"
+          @click="change"
         />
         <ipt
               label="队名"
@@ -68,12 +69,22 @@ export default {
   name: 'login',
   data () {
     return {
-      flag: false
-      // checked: this.flag
+    }
+  },
+  methods: {
+    // change () {
+    //   console.log('hello')
+    // }
+  },
+  computed: {
+    flag: {
+      get () {
+        return this.checkbox.checked
+      }
     }
   }
-//   methods: {
 }
+
 </script>
 
 <style>
