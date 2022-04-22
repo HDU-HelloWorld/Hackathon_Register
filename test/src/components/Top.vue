@@ -6,8 +6,8 @@
         <button class="right-btn" @click="showDetail">Hackathon简介</button>
         <button class="right-btn" @click="showDetail02">比赛介绍</button>
         <button class="right-btn" @click="showDetail03">参赛须知</button>
-        <button class="right-btn">赛程安排</button>
-        <button class="right-btn">大赛支持</button>
+        <button class="right-btn" @click="retrunrou">赛程安排</button>
+        <button class="right-btn" @click="retrunrou">大赛支持</button>
       </ul>
     </div>
     <img src="../assets/1.png">
@@ -33,15 +33,24 @@ export default {
   methods: {
     showDetail () {
       this.$bus.$emit('scrool')
+      this.$router.replace({
+        name: '/'
+      })
     },
     goHome () {
       this.$router.replace('/')
     },
     showDetail02 () {
       this.$bus.$emit('scrool-2')
+      this.$router.replace({
+        name: '/'
+      })
     },
     showDetail03 () {
       this.$bus.$emit('scrool-3')
+      this.$router.replace({
+        name: '/'
+      })
     },
     changerouter () {
       this.$router.replace({
@@ -53,9 +62,19 @@ export default {
         name: 'competerule'
       })
     },
+    changeprocess () {
+      this.$router.replace({
+        name: 'process'
+      })
+    },
     changeroutermark () {
       this.$router.replace({
         name: 'evaluaterule'
+      })
+    },
+    retrunrou () {
+      this.$router.replace({
+        name: '/'
       })
     }
   }

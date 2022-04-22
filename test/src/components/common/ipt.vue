@@ -31,10 +31,21 @@ export default {
     },
     SendContent () {
       this.$bus.$emit('chaocao', !this.content)
+    },
+    hander () {
+      const rue = new RegExp(this.rule)
+      if (rue.test(this.content)) {
+        this.$emit('inputchange', this.content)
+      }
     }
   },
   mounted: function () {
     this.iptrad()
+  },
+  watch: {
+    content () {
+      this.hander()
+    }
   }
 }
 </script>

@@ -55,7 +55,7 @@ export default {
 <style lang="less" scoped>
 .notice{
   margin-top: 100px;
-    width: 75%;
+    width: 80%;
     margin-left: 15%;
     h1{
       margin-bottom: 40px;
@@ -71,7 +71,6 @@ export default {
       line-height: 45px;
     }
     .exp{
-      // background-color: #fff;
       width: 100%;
       b {
         margin-left: 28px;

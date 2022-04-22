@@ -2,8 +2,8 @@
   <div class="wrapper">
     <hack-intro class="hackintro"></hack-intro>
     <compiti-intro class="compitiintro"></compiti-intro>
-    <plan class="plan"></plan>
     <notice class="notice"></notice>
+    <plan class="plan"></plan>
     <support class="support"></support>
   </div>
 </template>
