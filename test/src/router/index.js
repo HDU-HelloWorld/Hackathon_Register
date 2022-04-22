@@ -37,3 +37,8 @@ export default new Router({
     }
   ]
 })
+//  解决重复跳转路由的问题
+const VueRouterPush = Router.prototype.push
+Router.prototype.push = function push (to) {
+  return VueRouterPush.call(this, to).catch(err => err)
+}

@@ -100,8 +100,8 @@ export default {
           { min: 0, max: 20, message: '长度在 0 到 20 个字符', trigger: 'blur' }
         ],
         college: [
-          { required: true, message: '请输入大学', trigger: 'blur' },
-          { pattern: /^[\u0391-\uFFE5A-Za-z]+$/, message: '请输入大学', trigger: 'blur' },
+          { required: true, message: '请输入学院', trigger: 'blur' },
+          { pattern: /^[\u0391-\uFFE5A-Za-z]+$/, message: '请输入学院', trigger: 'blur' },
           { min: 0, max: 15, message: '长度在 0 到 15 个字符', trigger: 'blur' }
         ],
         grader: [
