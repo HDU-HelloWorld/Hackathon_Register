@@ -53,9 +53,6 @@
             </el-form-item>
           </el-col>
         </el-row>
-        <el-form-item label="个人介绍">
-          <el-input type="textarea" v-model="form.intro"></el-input>
-        </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="submitForm('form')">提交</el-button>
           <el-button type="secondary" @click="resetForm('form')"
