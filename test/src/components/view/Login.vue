@@ -55,8 +55,7 @@
           </el-col>
         </el-row>
         <el-form-item>
-          <el-button type="primary" @click="submitForm('form')" v-if="agreement">提交</el-button>
-          <el-button type="primary" @click="submitForm('form')" v-else disabled>提交</el-button>
+          <el-button type="primary" @click="submitForm('form')" :disabled="!agreement">提交</el-button>
           <el-button type="secondary" @click="resetForm('form')"
             >取消</el-button
           >
