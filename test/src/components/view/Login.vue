@@ -36,7 +36,8 @@
                 v-for="item in options"
                 :key="item.value"
                 :label="item.label"
-                :value="item.label">
+                :value="item.label"
+              >
               </el-option>
             </el-select>
           </el-form-item>
@@ -60,9 +61,13 @@
           >
         </el-form-item>
         <el-row>
-           <el-col>
-            <el-form-item  class="requirement">
-              <el-checkbox v-model="form.requirement" name="requirement" label="我已阅读并自觉遵守比赛规则"></el-checkbox>
+          <el-col>
+            <el-form-item class="requirement">
+              <el-checkbox
+                v-model="form.requirement"
+                name="requirement"
+                label="我已阅读并自觉遵守比赛规则"
+              ></el-checkbox>
             </el-form-item>
           </el-col>
         </el-row>
@@ -88,9 +93,9 @@ export default {
         grader: '',
         team: true,
         teamname: '',
-        intro: '',
-        requirement: false
+        intro: ''
       },
+      agreement: false,
       rules: {
         name: [
           { required: true, message: '请输入姓名', trigger: 'blur' },
@@ -164,7 +169,7 @@ export default {
 .floor {
   display: flex;
 }
-.requirement{
+.requirement {
   height: 10px;
 }
 </style>
