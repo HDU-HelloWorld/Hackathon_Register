@@ -30,8 +30,16 @@
           <el-form-item label="所在学院" prop="college">
             <el-input v-model="form.college"></el-input>
           </el-form-item>
-          <el-form-item label="所在年级" prop="grader">
-            <el-input v-model="form.grader"></el-input>
+          <el-form-item label="所在年级">
+            <el-select v-model="form.grader">
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.label"
+              >
+              </el-option>
+            </el-select>
           </el-form-item>
         </div>
         <el-row>
@@ -46,15 +54,24 @@
             </el-form-item>
           </el-col>
         </el-row>
-        <el-form-item label="个人介绍" prop="intro">
-          <el-input type="textarea" v-model="form.intro"></el-input>
-        </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="submitForm('form')">提交</el-button>
+          <el-button type="primary" @click="submitForm('form')" v-if="agreement">提交</el-button>
+          <el-button type="primary" @click="submitForm('form')" v-else disabled>提交</el-button>
           <el-button type="secondary" @click="resetForm('form')"
             >取消</el-button
           >
         </el-form-item>
+        <el-row>
+          <el-col>
+            <el-form-item class="requirement">
+              <el-checkbox
+                v-model="agreement"
+                name="agreement"
+                label="我已阅读并自觉遵守比赛规则"
+              ></el-checkbox>
+            </el-form-item>
+          </el-col>
+        </el-row>
       </el-form>
     </div>
   </div>
@@ -79,6 +96,7 @@ export default {
         teamname: '',
         intro: ''
       },
+      agreement: false,
       rules: {
         name: [
           { required: true, message: '请输入姓名', trigger: 'blur' },
@@ -100,8 +118,8 @@ export default {
           { min: 0, max: 20, message: '长度在 0 到 20 个字符', trigger: 'blur' }
         ],
         college: [
-          { required: true, message: '请输入学院', trigger: 'blur' },
-          { pattern: /^[\u0391-\uFFE5A-Za-z]+$/, message: '请输入学院', trigger: 'blur' },
+          { required: true, message: '请输入大学', trigger: 'blur' },
+          { pattern: /^[\u0391-\uFFE5A-Za-z]+$/, message: '请输入大学', trigger: 'blur' },
           { min: 0, max: 15, message: '长度在 0 到 15 个字符', trigger: 'blur' }
         ],
         grader: [
@@ -110,11 +128,7 @@ export default {
           { min: 0, max: 15, message: '长度在 0 到 15 个字符', trigger: 'blur' }
         ],
         team: [],
-        teamname: [],
-        intro: [
-          { required: true, message: '请输入个人介绍', trigger: 'blur' },
-          { min: 0, max: 500, message: '长度在 0 到 500 个字符', trigger: 'blur' }
-        ]
+        teamname: []
       }
     }
   },
@@ -156,5 +170,8 @@ export default {
 }
 .floor {
   display: flex;
+}
+.requirement {
+  height: 10px;
 }
 </style>

@@ -1,46 +1,43 @@
 <template>
-  <div class="rule">
-      <h1 class="title">比赛流程</h1>
-      <div class="content">
-        <div class="top">
-          <ul class="detail">
-            <h3>1.比赛签到</h3>
-            <br>
-            <div class="contentsize">参赛选手到达比赛现场，签到并领取相关物资。</div>
-          </ul>
-          <ul class="detail">
-            <h3>2.现场组队</h3>
-            <div class="contentsize">准备现场组队的开发者可以将身份卡放置于现场准备的组队版上，标注自己“能做什么，想做什么，在找怎样的人”等等关键词。调试相关硬件设备。</div>
-          </ul>
-          <ul class="detail">
-            <h3>3.宣讲阶段</h3>
-            <div class="contentsize">大赛主办方进行技术内容宣讲。开发者可选择感兴趣的内容参与，并就自己感兴趣的内容现场提问。</div>
-          </ul>
-          <ul class="detail">
-            <h3>4.开发阶段</h3>
-            <div class="contentsize">参赛队伍进行24小时开发。开发者如果有用到现场技术服务方，可以随时通过赞助商的现场展位向大赛服务提供商询问技术问题。</div>
-          </ul>
-        </div>
-        <div class="bottom">
-          <ul class="detail">
-            <h3>5.提交评审</h3>
-            <div class="contentsize">参赛队伍可以在比赛开始后的20小时后开始提交产品，提交截止后，大赛评委会将选出80%优秀产品进行产品展示。</div>
-          </ul>
-          <ul class="detail">
-            <h3>6.观众入场：</h3>
-            <div class="contentsize">参观比赛人员入场，观看产品展示环节。</div>
-          </ul>
-          <ul class="detail">
-            <h3>7.产品展示：</h3>
-            <div class="contentsize">每件产品有5分钟时间，可以通过演说，实物演示等手段进行产品展示，评委会根据产品的创新性、实用性、完成度进行评分。</div>
-          </ul>
-          <ul class="detail">
-            <h3>8.颁奖典礼：</h3>
-            <div class="contentsize">大赛评委会将在参加产品展示的产品中选出部分优秀产品，予以奖励。</div>
-          </ul>
-        </div>
+  <div class="rule1">
+    <div class="rule2">
+      <span id="title" class="flexfix">比赛流程</span>
+      <ul class="detail1">
+        <ul class="detail2">
+          <span class="detitle">1.比赛签到：</span>
+          <span class="contentsize">参赛选手到达比赛现场，签到并领取相关物资。</span>
+        </ul>
+        <ul class="detail2">
+          <span class="detitle">2.现场组队：</span>
+          <span class="contentsize">准备现场组队的开发者可以将身份卡放置于现场准备的组队版上，标注自己“能做什么，想做什么，在找怎样的人”等等关键词。调试相关硬件设备。</span>
+        </ul>
+        <ul class="detail2">
+          <span class="detitle">3.宣讲阶段：</span>
+          <span class="contentsize">大赛主办方进行技术内容宣讲。开发者可选择感兴趣的内容参与，并就自己感兴趣的内容现场提问。</span>
+        </ul>
+        <ul class="detail2">
+          <span class="detitle">4.开发阶段：</span>
+          <span class="contentsize">参赛队伍进行24小时开发。开发者如果有用到现场技术服务方，可以随时通过赞助商的现场展位向大赛服务提供商询问技术问题。</span>
+        </ul>
+        <ul class="detail2">
+          <span class="detitle">5.提交评审：</span>
+          <span class="contentsize">参赛队伍可以在比赛开始后的20小时后开始提交产品，提交截止后，大赛评委会将选出80%优秀产品进行产品展示。</span>
+        </ul>
+        <ul class="detail2">
+          <span class="detitle">6.观众入场：</span>
+          <span class="contentsize">参观比赛人员入场，观看产品展示环节。</span>
+        </ul>
+        <ul class="detail2">
+          <span class="detitle">7.产品展示：</span>
+          <span class="contentsize">每件产品有5分钟时间，可以通过演说，实物演示等手段进行产品展示，评委会根据产品的创新性、实用性、完成度进行评分。</span>
+        </ul>
+        <ul class="detail2">
+          <span class="detitle">8.颁奖典礼：</span>
+          <span class="contentsize">大赛评委会将在参加产品展示的产品中选出部分优秀产品，予以奖励。</span>
+        </ul>
+      </ul>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -49,66 +46,62 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-*{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.rule{
-  width: 80%;
-  margin: 100px auto;
-  h1{
-    width: 100%;
-    text-align: center;
-    margin-bottom: 25px;
-  }
-  .content{
-    width: 100%;
-    justify-content: space-between;
+<style>
+  .rule1 {
     display: flex;
-    flex-direction: column;
-    font-size: 28px;
-    height: 600px;
-    .top{
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
-      .detail{
-        border-radius: 15px;
-        width: 22%;
-        padding: 0 15px;
-        background: rgba(178, 246, 148, 0.3);
-        box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
-        h3{
-          margin-top: 5%;
-          text-align: center;
-        }
-        .contentsize{
-          line-height: 43px;
-        }
-      }
-    }
-    .bottom{
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
-      margin-top: 20px;
-      .detail{
-        border-radius: 15px ;
-        width: 22%;
-        padding: 0 15px;
-        background: rgba(232, 132, 132, 0.3);
-        box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
-        h3{
-          margin-top: 5%;
-          text-align: center;
-        }
-        .contentsize{
-          line-height: 43px;
-        }
-      }
-    }
+    width: 70%;
+    height: 100vh;
+    margin-left: 15%;
+    border-top: 5px solid rgb(231, 62, 62);
   }
-}
+
+  .rule2{
+    display: flex;
+    height: 100vh;
+  }
+
+  #title {
+    display: flex;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 20px 100px 0 20px;
+  }
+
+  .flexfix{
+    flex: 174px;
+  }
+
+  .detitle {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 0;
+  }
+
+  .contentsize{
+    font-size: 18px;
+    line-height: 40px;
+    padding-bottom: 10px;
+  }
+
+  .detail1 {
+    margin: 25px 0 0 0;
+    height: 200px;
+    height: 0;
+  }
+
+  .detail2{
+    padding-bottom: 10px;
+  }
+
+  li {
+    font-size: 18px;
+    padding: 10px 0;
+    margin-left: 50px;
+    list-style-type: square;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
 </style>
