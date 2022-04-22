@@ -55,7 +55,8 @@
           </el-col>
         </el-row>
         <el-form-item>
-          <el-button type="primary" @click="submitForm('form')">提交</el-button>
+          <el-button type="primary" @click="submitForm('form')" v-if="agreement">提交</el-button>
+          <el-button type="primary" @click="submitForm('form')" v-else disabled>提交</el-button>
           <el-button type="secondary" @click="resetForm('form')"
             >取消</el-button
           >
@@ -64,8 +65,8 @@
           <el-col>
             <el-form-item class="requirement">
               <el-checkbox
-                v-model="form.requirement"
-                name="requirement"
+                v-model="agreement"
+                name="agreement"
                 label="我已阅读并自觉遵守比赛规则"
               ></el-checkbox>
             </el-form-item>
