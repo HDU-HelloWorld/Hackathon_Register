@@ -46,9 +46,6 @@
             </el-form-item>
           </el-col>
         </el-row>
-        <el-form-item label="个人介绍" prop="intro">
-          <el-input type="textarea" v-model="form.intro"></el-input>
-        </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="submitForm('form')">提交</el-button>
           <el-button type="secondary" @click="resetForm('form')"
@@ -110,11 +107,7 @@ export default {
           { min: 0, max: 15, message: '长度在 0 到 15 个字符', trigger: 'blur' }
         ],
         team: [],
-        teamname: [],
-        intro: [
-          { required: true, message: '请输入个人介绍', trigger: 'blur' },
-          { min: 0, max: 500, message: '长度在 0 到 500 个字符', trigger: 'blur' }
-        ]
+        teamname: []
       }
     }
   },
