@@ -1,79 +1,60 @@
 <template>
+  <!-- 在本页尽量使用el-24分栏布局 -->
   <div class="login">
     <div class="wrapper">
-      <div class="floor">
-        <ipt
-          label="姓名"
-          type="text"
-          rule="^.{6,16}$"
-          style="margin:25px 10px "
-          @inputChange="res => model.name = res "
-          />
-        <ipt
-          label="年龄"
-          type="text"
-          rule="^.{6,16}$"
-          style="margin:25px 10px "
-          @inputChange="res => model.age = res "
-          />
-      </div>
-      <ipt
-          label="电话"
-          type="text"
-          rule="^.{6,16}$"
-          style="margin:25px 10px "
-          @inputChange="res => model.phone = res "
-      />
-      <ipt
-          label="邮箱"
-          type="text"
-          rule="^.{6,16}$"
-          style="margin:25px 10px "
-          @inputChange="res => model.email = res "
-      />
-      <div class="floor">
-        <ipt
-          label="所在学院"
-          type="text"
-          rule="^.{6,16}$"
-          style="margin:25px 10px "
-          @inputChange="res => model.college = res "
-        />
-        <ipt
-          label="所在年级"
-          type="text"
-          rule="^.{6,16}$"
-          style="margin:25px 10px "
-          @inputChange="res => model.grader = res "
-        />
-      </div>
-      <div class="floor">
-        <ipt
-          label="是否组队"
-          type="checkbox"
-          rule="^.{6,16}$"
-          style="margin:25px 10px "
-        />
-        <ipt
-          label="队名"
-          type="text"
-          rule="^.{6,16}$"
-          style="margin:25px 10px "
-          v-show="panduan"
-          @inputChange="res => model.teamname = res "
-        />
-      </div>
-      <div class="floor">
-        <ipt
-          label="你的个人介绍"
-          type="text"
-          rule="^.{6,16}$"
-          style="margin:25px 10px "
-          @inputChange="res => model.intro = res "
-        />
-      </div>
+      <el-form ref="form" :model="form" label-width="80px">
+        <!-- el-row 和 el-col可以控制表单组件在一行内显示 -->
+        <!-- el-col 和 el-col采用24分栏布局，一行的宽度被均分为24份 -->
+        <!-- 因此规定一行内两个col的span均为12即可实现等分一行 -->
+        <!-- offset控制组件左侧空出的间距，如值为3时即空出这一行3/24的距离 -->
+        <!-- 下面为一个行内显示示例 -->
+        <el-row>
+          <el-col :span="12" :offset="0">
+            <el-form-item label="姓名">
+              <el-input v-model="form.name"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span="12" :offset="0">
+            <el-form-item label="年龄">
+              <el-input v-model="form.age"></el-input>
+            </el-form-item>
+          </el-col>
+        </el-row>
+        <el-form-item label="电话">
+          <el-input v-model="form.phone"></el-input>
+        </el-form-item>
+        <el-form-item label="邮箱">
+          <el-input v-model="form.email"></el-input>
+        </el-form-item>
+        <div class="floor">
+          <el-form-item label="所在学院">
+            <el-input v-model="form.college"></el-input>
+          </el-form-item>
+          <el-form-item label="所在年级">
+            <el-input v-model="form.grader"></el-input>
+          </el-form-item>
+        </div>
+        <el-row>
+          <el-col span="6">
+            <el-form-item label="是否组队" class="team">
+              <el-checkbox v-model="form.team" name="type"></el-checkbox>
+            </el-form-item>
+          </el-col>
+          <el-col span="18">
+            <el-form-item label="队名" v-if="form.team">
+              <el-input v-model="form.teamname"></el-input>
+            </el-form-item>
+          </el-col>
+        </el-row>
+        <el-form-item label="个人介绍">
+          <el-input type="textarea" v-model="form.intro"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="onSubmit">提交</el-button>
+          <el-button>取消</el-button>
+        </el-form-item>
+      </el-form>
     </div>
-    <button @click="submit">提交捏</button>
   </div>
 </template>
 
@@ -85,13 +66,14 @@ export default {
   data () {
     return {
       panduan: '',
-      model: {
+      form: {
         name: '',
         age: '',
         phone: '',
         email: '',
         college: '',
         grader: '',
+        team: true,
         teamname: '',
         intro: ''
       }
@@ -103,32 +85,29 @@ export default {
     })
   },
   methods: {
-    submit () {
-      console.log(this.model)
-    }
+    onSubmit () { }
   }
 }
 
 </script>
 
-<style>
-.login{
+<style scoped>
+.login {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    width: 450px;
-    background-color: #fff;
-    padding: 25px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    margin:25px auto;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  background-color: #fff;
+  padding: 25px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 25px auto;
 }
-.floor{
+.floor {
   display: flex;
 }
-
 </style>
