@@ -131,11 +131,6 @@ export default {
       }
     }
   },
-  mounted () {
-    this.$bus.$on('chaocao', (data) => {
-      this.panduan = data
-    })
-  },
   methods: {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
