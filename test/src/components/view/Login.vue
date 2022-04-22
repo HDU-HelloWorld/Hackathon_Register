@@ -52,6 +52,13 @@
             >取消</el-button
           >
         </el-form-item>
+        <el-row>
+           <el-col>
+            <el-form-item  class="requirement">
+              <el-checkbox v-model="form.requirement" name="requirement" label="我已阅读并自觉遵守比赛规则"></el-checkbox>
+            </el-form-item>
+          </el-col>
+        </el-row>
       </el-form>
     </div>
   </div>
@@ -74,7 +81,8 @@ export default {
         grader: '',
         team: true,
         teamname: '',
-        intro: ''
+        intro: '',
+        requirement: false
       },
       rules: {
         name: [
@@ -154,5 +162,8 @@ export default {
 }
 .floor {
   display: flex;
+}
+.requirement{
+  height: 10px;
 }
 </style>
