@@ -14,24 +14,31 @@
               <el-input v-model="form.name"></el-input>
             </el-form-item>
           </el-col>
-          <el-col :span="12" :offset="0" prop="age">
+          <el-col :span="12" :offset="0">
             <el-form-item label="年龄">
               <el-input v-model="form.age"></el-input>
             </el-form-item>
           </el-col>
         </el-row>
-        <el-form-item label="电话" prop="phone">
+        <el-form-item label="电话">
           <el-input v-model="form.phone"></el-input>
         </el-form-item>
-        <el-form-item label="邮箱" prop="email">
+        <el-form-item label="邮箱">
           <el-input v-model="form.email"></el-input>
         </el-form-item>
         <div class="floor">
-          <el-form-item label="所在学院" prop="college">
+          <el-form-item label="所在学院">
             <el-input v-model="form.college"></el-input>
           </el-form-item>
-          <el-form-item label="所在年级" prop="grader">
-            <el-input v-model="form.grader"></el-input>
+          <el-form-item label="所在年级">
+            <el-select v-model="form.grader">
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.label">
+              </el-option>
+            </el-select>
           </el-form-item>
         </div>
         <el-row>
@@ -81,34 +88,28 @@ export default {
           { required: true, message: '请输入姓名', trigger: 'blur' },
           { min: 0, max: 15, message: '长度在 0 到 15 个字符', trigger: 'blur' }
         ],
-        age: [
-          { required: true, message: '请输入年龄', trigger: 'blur' },
-          { type: 'number', message: '请输入数字', trigger: 'blur' },
-          { min: 0, max: 15, message: '长度在 0 到 15 个字符', trigger: 'blur' }
-        ],
-        phone: [
-          { required: true, message: '请输入电话', trigger: 'blur' },
-          { pattern: /^1[3-9][0-9]\d{8}$/, message: '请输入正确的电话号码', trigger: 'blur' },
-          { min: 0, max: 15, message: '长度在 0 到 15 个字符', trigger: 'blur' }
-        ],
-        email: [
-          { required: true, message: '请输入邮箱', trigger: 'blur' },
-          { type: 'email', message: '请输入正确的邮箱', trigger: 'blur' },
-          { min: 0, max: 20, message: '长度在 0 到 20 个字符', trigger: 'blur' }
-        ],
-        college: [
-          { required: true, message: '请输入大学', trigger: 'blur' },
-          { pattern: /^[\u0391-\uFFE5A-Za-z]+$/, message: '请输入大学', trigger: 'blur' },
-          { min: 0, max: 15, message: '长度在 0 到 15 个字符', trigger: 'blur' }
-        ],
-        grader: [
-          { required: true, message: '请输入年级', trigger: 'blur' },
-          { pattern: /^[\u0391-\uFFE5A-Za-z]+$/, message: '请输入年级', trigger: 'blur' },
-          { min: 0, max: 15, message: '长度在 0 到 15 个字符', trigger: 'blur' }
-        ],
+        age: [],
+        phone: [],
+        email: [],
+        college: [],
+        grader: [],
         team: [],
-        teamname: []
-      }
+        teamname: [],
+        intro: []
+      },
+      options: [{
+        value: '选项1',
+        label: '大一'
+      }, {
+        value: '选项2',
+        label: '大二'
+      }, {
+        value: '选项3',
+        label: '大三'
+      }, {
+        value: '选项4',
+        label: '大四'
+      }]
     }
   },
   mounted () {
