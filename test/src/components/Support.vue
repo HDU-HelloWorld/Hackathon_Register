@@ -1,10 +1,22 @@
 <template>
   <div class="support">
-    <h1 class="title">大赛支持
+    <h1 class="title">大赛主办
       <hr>
     </h1>
     <div class="exp">
-      <img src="../assets/3.jpeg" alt="">
+      <p><img src="../assets/logo.png" alt=""></p>
+    </div>
+    <h1 class="title">大赛协办
+      <hr>
+    </h1>
+    <div class="exp">
+      <p><img src="../assets/log3.png" alt=""><img src="../assets/Ccf.png" alt="" style="margin:50px 100px;"></p>
+    </div>
+    <h1 class="title">大赛赞助
+      <hr>
+    </h1>
+    <div class="exp">
+      <p><img src="../assets/arcsoft.png" alt="" style="width:300px;margin-bottom:200px;"></p>
     </div>
   </div>
 </template>
@@ -40,9 +52,11 @@ export default {
       }
     }
     .exp{
-      width: 100%;
+      width: 80%;
+      text-align: center;
       img{
-        width: 85%;
+        width: 200px;
+        margin: 50px auto;
       }
     }
 }
