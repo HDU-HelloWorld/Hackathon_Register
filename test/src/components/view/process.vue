@@ -21,7 +21,19 @@
         </ul>
         <ul class="detail2">
           <span class="detitle">5.提交评审：</span>
-          <span class="contentsize">参赛队伍可以在比赛开始后的20小时后开始提交产品，提交截止后，大赛评委会将选出80%优秀产品进行产品展示</span>
+          <span class="contentsize">参赛队伍可以在比赛开始后的20小时后开始提交产品，提交截止后，大赛评委会将选出80%优秀产品进行产品展示。</span>
+        </ul>
+        <ul class="detail2">
+          <span class="detitle">6.观众入场：</span>
+          <span class="contentsize">参观比赛人员入场，观看产品展示环节。</span>
+        </ul>
+        <ul class="detail2">
+          <span class="detitle">7.产品展示：</span>
+          <span class="contentsize">每件产品有5分钟时间，可以通过演说，实物演示等手段进行产品展示，评委会根据产品的创新性、实用性、完成度进行评分。</span>
+        </ul>
+        <ul class="detail2">
+          <span class="detitle">8.颁奖典礼：</span>
+          <span class="contentsize">大赛评委会将在参加产品展示的产品中选出部分优秀产品，予以奖励。</span>
         </ul>
       </ul>
     </div>
