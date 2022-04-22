@@ -2,12 +2,23 @@
   <div class="login">
     <div class="wrapper">
       <el-form ref="form" :model="form" label-width="80px">
-        <el-form-item label="姓名">
-          <el-input v-model="form.name"></el-input>
-        </el-form-item>
-        <el-form-item label="年龄">
-          <el-input v-model="form.age"></el-input>
-        </el-form-item>
+        <!-- el-row 和 el-col可以控制表单组件在一行内显示 -->
+        <!-- el-col 和 el-col采用24分栏布局，一行的宽度被均分为24份 -->
+        <!-- 因此规定一行内两个col的span均为12即可实现等分一行 -->
+        <!-- offset控制组件左侧空出的间距，如值为3时即空出这一行3/24的距离 -->
+        <!-- 下面为一个行内显示示例 -->
+        <el-row>
+          <el-col :span="12" :offset="0">
+            <el-form-item label="姓名">
+              <el-input v-model="form.name"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span="12" :offset="0">
+            <el-form-item label="年龄">
+              <el-input v-model="form.age"></el-input>
+            </el-form-item>
+          </el-col>
+        </el-row>
         <el-form-item label="电话">
           <el-input v-model="form.phone"></el-input>
         </el-form-item>
@@ -22,12 +33,18 @@
             <el-input v-model="form.grader"></el-input>
           </el-form-item>
         </div>
-        <el-form-item label="是否组队" class="team">
-          <el-checkbox v-model="form.team" name="type"></el-checkbox>
-          <el-form-item label="队名" v-if="form.team">
-            <el-input v-model="form.teamname"></el-input>
-          </el-form-item>
-        </el-form-item>
+        <el-row>
+          <el-col span="6">
+            <el-form-item label="是否组队" class="team">
+              <el-checkbox v-model="form.team" name="type"></el-checkbox>
+            </el-form-item>
+          </el-col>
+          <el-col span="18">
+            <el-form-item label="队名" v-if="form.team">
+              <el-input v-model="form.teamname"></el-input>
+            </el-form-item>
+          </el-col>
+        </el-row>
         <el-form-item label="个人介绍">
           <el-input type="textarea" v-model="form.intro"></el-input>
         </el-form-item>
@@ -67,7 +84,7 @@ export default {
     })
   },
   methods: {
-    onSubmit () {}
+    onSubmit () { }
   }
 }
 
