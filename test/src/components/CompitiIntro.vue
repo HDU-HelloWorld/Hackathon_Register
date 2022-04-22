@@ -67,7 +67,7 @@ export default {
   methods: {
     scrool () {
       window.scrollTo({
-        'top': 1300,
+        'top': 1210, // 原来是1300
         'behavior': 'smooth'
       })
     }

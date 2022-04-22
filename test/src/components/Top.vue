@@ -6,8 +6,8 @@
         <button class="right-btn" @click="showDetail">Hackathon简介</button>
         <button class="right-btn" @click="showDetail02">比赛介绍</button>
         <button class="right-btn" @click="showDetail03">参赛须知</button>
-        <button class="right-btn" @click="retrunrou">赛程安排</button>
-        <button class="right-btn" @click="retrunrou">大赛支持</button>
+        <button class="right-btn" @click="showDetail04">赛程安排</button>
+        <button class="right-btn" @click="showDetail05">大赛支持</button>
       </ul>
     </div>
     <img src="../assets/1.png">
@@ -45,6 +45,18 @@ export default {
     },
     showDetail03 () {
       this.$bus.$emit('scrool-3')
+      this.$router.replace({
+        name: '/'
+      })
+    },
+    showDetail04 () {
+      this.$bus.$emit('scrool-4')
+      this.$router.replace({
+        name: '/'
+      })
+    },
+    showDetail05 () {
+      this.$bus.$emit('scrool-5')
       this.$router.replace({
         name: '/'
       })
