@@ -31,7 +31,14 @@
             <el-input v-model="form.college"></el-input>
           </el-form-item>
           <el-form-item label="所在年级">
-            <el-input v-model="form.grader"></el-input>
+            <el-select v-model="form.grader">
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.label">
+              </el-option>
+            </el-select>
           </el-form-item>
         </div>
         <el-row>
@@ -92,7 +99,20 @@ export default {
         team: [],
         teamname: [],
         intro: []
-      }
+      },
+      options: [{
+        value: '选项1',
+        label: '大一'
+      }, {
+        value: '选项2',
+        label: '大二'
+      }, {
+        value: '选项3',
+        label: '大三'
+      }, {
+        value: '选项4',
+        label: '大四'
+      }]
     }
   },
   mounted () {
