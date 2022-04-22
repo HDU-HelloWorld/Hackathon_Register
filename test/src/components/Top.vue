@@ -12,7 +12,7 @@
     </div>
     <img src="../assets/1.png">
     <div class="top-bottom">
-      <button class="bottom-left">比赛流程</button>
+      <button class="bottom-left" @click="goHome">比赛流程</button>
       <button class="bottom-left" @click="changeroutercom">比赛规则</button>
       <button class="bottom-left" @click="changeroutermark">评分规则</button>
       <button class="btn" @click="changerouter">点我报名
@@ -33,6 +33,9 @@ export default {
   methods: {
     showDetail () {
       this.$bus.$emit('scrool')
+    },
+    goHome () {
+      this.$router.replace('/')
     },
     showDetail02 () {
       this.$bus.$emit('scrool-2')
@@ -107,6 +110,7 @@ export default {
           border: none;
           background-color: transparent;
           outline: none;
+          cursor: pointer;
           &:hover{
             border-bottom: 5px solid black;
           }
@@ -138,6 +142,7 @@ export default {
         height: 40px;
         line-height: 40px;
         width: 130px;
+        cursor: pointer;
         text-align: center;
         &:hover{
           border-bottom: 5px solid black;
