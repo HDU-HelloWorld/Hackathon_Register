@@ -2,7 +2,7 @@
   <!-- 在本页尽量使用el-24分栏布局 -->
   <div class="login">
     <div class="wrapper">
-      <el-form ref="form" :model="form" label-width="80px">
+      <el-form :model="form" :rules="rules" ref="form" label-width="80px">
         <!-- el-row 和 el-col可以控制表单组件在一行内显示 -->
         <!-- el-col 和 el-col采用24分栏布局，一行的宽度被均分为24份 -->
         <!-- 因此规定一行内两个col的span均为12即可实现等分一行 -->
@@ -10,7 +10,7 @@
         <!-- 下面为一个行内显示示例 -->
         <el-row>
           <el-col :span="12" :offset="0">
-            <el-form-item label="姓名">
+            <el-form-item label="姓名" prop="name">
               <el-input v-model="form.name"></el-input>
             </el-form-item>
           </el-col>
@@ -35,12 +35,12 @@
           </el-form-item>
         </div>
         <el-row>
-          <el-col span="6">
+          <el-col :span="6">
             <el-form-item label="是否组队" class="team">
               <el-checkbox v-model="form.team" name="type"></el-checkbox>
             </el-form-item>
           </el-col>
-          <el-col span="18">
+          <el-col :span="18">
             <el-form-item label="队名" v-if="form.team">
               <el-input v-model="form.teamname"></el-input>
             </el-form-item>
@@ -50,8 +50,10 @@
           <el-input type="textarea" v-model="form.intro"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="onSubmit">提交</el-button>
-          <el-button>取消</el-button>
+          <el-button type="primary" @click="submitForm('form')">提交</el-button>
+          <el-button type="secondary" @click="resetForm('form')"
+            >取消</el-button
+          >
         </el-form-item>
       </el-form>
     </div>
@@ -76,6 +78,20 @@ export default {
         team: true,
         teamname: '',
         intro: ''
+      },
+      rules: {
+        name: [
+          { required: true, message: '请输入姓名', trigger: 'blur' },
+          { min: 0, max: 15, message: '长度在 0 到 15 个字符', trigger: 'blur' }
+        ],
+        age: [],
+        phone: [],
+        email: [],
+        college: [],
+        grader: [],
+        team: [],
+        teamname: [],
+        intro: []
       }
     }
   },
@@ -85,7 +101,20 @@ export default {
     })
   },
   methods: {
-    onSubmit () { }
+    submitForm (formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          alert('submit!')
+          console.log(this.form)
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      })
+    },
+    resetForm (formName) {
+      this.$refs[formName].resetFields()
+    }
   }
 }
 
