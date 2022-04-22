@@ -21,7 +21,7 @@
         </ul>
         <ul class="detail2">
           <span class="detitle">5.提交评审：</span>
-          <span class="contentsize">参赛队伍</span>
+          <span class="contentsize">参赛队伍可以在比赛开始后的20小时后开始提交产品，提交截止后，大赛评委会将选出80%优秀产品进行产品展示</span>
         </ul>
       </ul>
     </div>
