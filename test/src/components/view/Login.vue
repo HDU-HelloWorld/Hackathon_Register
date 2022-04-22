@@ -1,4 +1,5 @@
 <template>
+  <!-- 在本页尽量使用el-24分栏布局 -->
   <div class="login">
     <div class="wrapper">
       <el-form ref="form" :model="form" label-width="80px">
