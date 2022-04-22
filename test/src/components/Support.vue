@@ -17,7 +17,7 @@ export default {
   methods: {
     scrool () {
       window.scrollTo({
-        'top': 4825,
+        'top': 5640,
         'behavior': 'smooth'
       })
     }
