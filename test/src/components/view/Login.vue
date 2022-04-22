@@ -56,9 +56,7 @@
         </el-row>
         <el-form-item>
           <el-button type="primary" @click="submitForm('form')" :disabled="!agreement">提交</el-button>
-          <el-button type="secondary" @click="resetForm('form')"
-            >取消</el-button
-          >
+          <el-button type="secondary" @click="resetForm('form')" :disabled="!agreement">取消</el-button>
         </el-form-item>
         <el-row>
           <el-col>
@@ -128,7 +126,20 @@ export default {
         ],
         team: [],
         teamname: []
-      }
+      },
+      options: [{
+        value: '选项1',
+        label: '大一'
+      }, {
+        value: '选项2',
+        label: '大二'
+      }, {
+        value: '选项3',
+        label: '大三'
+      }, {
+        value: '选项4',
+        label: '大四'
+      }]
     }
   },
   methods: {
