@@ -11,7 +11,17 @@
 
 <script>
 export default {
-  name: 'support'
+  mounted () {
+    this.$bus.$on('scrool-5', this.scrool)
+  },
+  methods: {
+    scrool () {
+      window.scrollTo({
+        'top': 4825,
+        'behavior': 'smooth'
+      })
+    }
+  }
 }
 </script>
 
