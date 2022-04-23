@@ -221,10 +221,10 @@ export default {
   flex-direction: column;
   width: 100%;
   background-color: #fff;
-  padding: 25px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  margin: 25px auto;
+  /* padding: 25px;
+  margin: 25px auto; */
 }
 .floor {
   display: flex;
