@@ -13,9 +13,9 @@
             class="el-menu-demo top"
             mode="horizontal"
             @select="handleSelect"
-            background-color="#fff"
             text-color="#171717"
-            active-text-color="#63CF79">
+            active-text-color="#63CF79"
+            >
             <el-menu-item index="1">Hackathon简介</el-menu-item>
             <el-menu-item index="2">比赛介绍</el-menu-item>
             <el-menu-item index="3">参赛须知</el-menu-item>
@@ -93,6 +93,9 @@ export default {
 </script>
 
 <style lang='less' scoped>
+.el-menu-demo{
+    background-image: linear-gradient(to right; rgba(0, 0, 0, 0.8), rgba(80, 168, 131, 0.7),rgb(7, 42, 28));
+}
   a {
     text-decoration: none;
     color: black;
@@ -124,7 +127,6 @@ export default {
       top: 0px;
       left: 0px;
       z-index: 999;
-      background-color: #fff;
     }
     .login{
     position: fixed;
