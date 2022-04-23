@@ -7,16 +7,6 @@
       </div>
       <div class="top-barrer">
         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-          <el-menu-item index="1" @click=showDetail>Hackathon简介</el-menu-item>
-          <el-menu-item index="2" @click="showDetail02">比赛介绍</el-menu-item>
-          <el-submenu index="3">
-            <div slot="title">参赛须知</div>
-            <el-menu-item index="3-1">比赛流程</el-menu-item>
-            <el-menu-item index="3-2">比赛规则</el-menu-item>
-            <el-menu-item index="3-3">评分规则</el-menu-item>
-          </el-submenu>
-          <el-menu-item index="4">赛程安排</el-menu-item>
-          <el-menu-item index="5">大赛支持</el-menu-item>
         </el-menu>
           <div class="line"></div>
           <el-menu
