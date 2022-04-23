@@ -1,5 +1,10 @@
 <template>
     <div class="top">
+      <div class="login">
+        <button class="btn" @click="showLogin">我要报名
+          <span></span><span></span><span></span><span></span><span></span>
+        </button>
+      </div>
       <div class="top-barrer">
         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
           <el-menu-item index="1" @click=showDetail>Hackathon简介</el-menu-item>
@@ -222,7 +227,7 @@ export default {
           color: #222;
         }
         &:hover span{
-          transform: translateX(-50%) scale(2);
+          transform: translateX(-40%) scale(2);
         }
         span{
           z-index: -1;
