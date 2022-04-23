@@ -1,33 +1,27 @@
 <template>
-  <div class="top">
-    <div class="top-barrer">
-      <div class="left">HACKATHON</div>
-      <ul class="right">
-        <button class="right-btn" @click="showDetail">Hackathon简介</button>
-        <button class="right-btn" @click="showDetail02">比赛介绍</button>
-        <button class="right-btn" @click="showDetail03">参赛须知</button>
-        <button class="right-btn" @click="showDetail04">赛程安排</button>
-        <button class="right-btn" @click="showDetail05">大赛支持</button>
-      </ul>
+    <div class="top">
+      <div class="top-barrer">
+        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+          <el-menu-item index="1">Hackathon简介</el-menu-item>
+          <el-menu-item index="2">比赛介绍</el-menu-item>
+          <el-submenu index="3">
+            <template slot="title">参赛须知</template>
+            <el-menu-item index="3-1">比赛流程</el-menu-item>
+            <el-menu-item index="3-2">比赛规则</el-menu-item>
+            <el-menu-item index="3-3">评分规则</el-menu-item>
+          </el-submenu>
+          <el-menu-item index="4">赛程安排</el-menu-item>
+          <el-menu-item index="5">大赛支持</el-menu-item>
+        </el-menu>
+      </div>
     </div>
-    <img src="../assets/1.png">
-    <div class="top-bottom">
-      <button class="bottom-left" @click="changeprocess">比赛流程</button>
-      <button class="bottom-left" @click="changeroutercom">比赛规则</button>
-      <button class="bottom-left" @click="changeroutermark">评分规则</button>
-      <button class="btn" @click="changerouter">点我报名
-        <span></span><span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-  <!-- 测试提交 -->
 </template>
-
 <script>
 export default {
   data () {
     return {
-
+      activeIndex: '1',
+      activeIndex2: '1'
     }
   },
   methods: {
@@ -64,9 +58,10 @@ export default {
         name: '/'
       })
     },
-    changerouter () {
+    showLogin () {
+      this.$bus.$emit('scrool-6')
       this.$router.replace({
-        name: 'login'
+        name: '/'
       })
     },
     changeroutercom () {
@@ -175,18 +170,23 @@ export default {
           transition:0.5;
         }
       }
+    }
+    .login{
+    position: fixed;
+    top: 40%;
+    right: 5%;
       .btn{
-        font-size: 28px;
+        font-size: 30px;
         margin-top: 8px;
-        width: 240px;
-        height: 60px;
+        width: 65px;
+        height: 200px;
         margin-left: 50%;
         color: #fff;
         background: linear-gradient(200deg,#00cbf6,#66a6ff);
         border-radius: 10px;
-        border: 3px solid #fff;
+        border: 4px solid #fff;
         text-align: center;
-        line-height: 60px;
+        line-height: 40px;
         font-weight: bold;
         cursor: pointer;
         position: relative;
@@ -197,17 +197,22 @@ export default {
           color: #222;
         }
         &:hover span{
-          transform: translateY(0) scale(2);
+          transform: translateX(-50%) scale(2);
         }
         span{
           z-index: -1;
           position: absolute;
-          width: 25%;
-          height: 100%;
+          width: 100%;
+          height: 25%;
           background-color: #fff;
           border-radius: 50%;
+<<<<<<< HEAD
           transform: translateY (150%);
           left: calc((var( --n ) - 1) * 25% );
+=======
+          transform: translateX(150%);
+          top: calc((var( --n ) - 1) * 25% );
+>>>>>>> db219c3d96cd30f8ecb1759bfaaaf50b027b6ee4
           transition: 0.5s;
           transition-delay: calc((var( --n ) - 1) * 0.1s );
           &:nth-child(1){
@@ -221,6 +226,10 @@ export default {
           }
           &:nth-child(4){
             --n:4;
+          }
+          &:focus{
+            border: none;
+            outline: none;
           }
         }
       }

@@ -43,12 +43,12 @@
           </el-form-item>
         </div>
         <el-row>
-          <el-col :span="6">
+          <!-- <el-col :span="6">
             <el-form-item label="是否组队" class="team">
               <el-checkbox v-model="form.team" name="type"></el-checkbox>
             </el-form-item>
-          </el-col>
-          <el-col :span="18">
+          </el-col> -->
+          <el-col>
             <el-form-item label="队名" v-if="form.team">
               <el-input v-model="form.teamname"></el-input>
             </el-form-item>
@@ -78,7 +78,7 @@
 import ipt from '../common/ipt.vue'
 export default {
   components: { ipt },
-  name: 'login',
+  name: 'ApplyForm',
   data () {
     return {
       panduan: '',
@@ -156,7 +156,16 @@ export default {
     },
     resetForm (formName) {
       this.$refs[formName].resetFields()
+    },
+    scrool () {
+      window.scrollTo({
+        'top': 6000, // 原来是1300
+        'behavior': 'smooth'
+      })
     }
+  },
+  mounted () {
+    this.$bus.$on('scrool-6', this.scrool)
   }
 }
 
