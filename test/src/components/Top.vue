@@ -1,33 +1,27 @@
 <template>
-  <div class="top">
-    <div class="top-barrer">
-      <div class="left">HACKATHON</div>
-      <ul class="right">
-        <button class="right-btn" @click="showDetail">Hackathon简介</button>
-        <button class="right-btn" @click="showDetail02">比赛介绍</button>
-        <button class="right-btn" @click="showDetail03">参赛须知</button>
-        <button class="right-btn" @click="showDetail04">赛程安排</button>
-        <button class="right-btn" @click="showDetail05">大赛支持</button>
-      </ul>
+    <div class="top">
+      <div class="top-barrer">
+        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+          <el-menu-item index="1">Hackathon简介</el-menu-item>
+          <el-menu-item index="2">比赛介绍</el-menu-item>
+          <el-submenu index="3">
+            <template slot="title">参赛须知</template>
+            <el-menu-item index="3-1">比赛流程</el-menu-item>
+            <el-menu-item index="3-2">比赛规则</el-menu-item>
+            <el-menu-item index="3-3">评分规则</el-menu-item>
+          </el-submenu>
+          <el-menu-item index="4">赛程安排</el-menu-item>
+          <el-menu-item index="5">大赛支持</el-menu-item>
+        </el-menu>
+      </div>
     </div>
-    <img src="../assets/1.png">
-    <div class="top-bottom">
-      <button class="bottom-left" @click="changeprocess">比赛流程</button>
-      <button class="bottom-left" @click="changeroutercom">比赛规则</button>
-      <button class="bottom-left" @click="changeroutermark">评分规则</button>
-      <button class="btn" @click="changerouter">点我报名
-        <span></span><span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-  <!-- 测试提交 -->
 </template>
-
 <script>
 export default {
   data () {
     return {
-
+      activeIndex: '1',
+      activeIndex2: '1'
     }
   },
   methods: {
