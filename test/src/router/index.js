@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 //  引入路由文件
 import HomeContent from '../components/view/HomeContent'
-import login from '../components/view/login'
+import ApplyForm from '../components/view/ApplyForm'
 import competerule from '../components/view/competerule'
 import evaluaterule from '../components/view/evaluaterule'
 import process from '../components/view/process'
@@ -16,9 +16,9 @@ export default new Router({
       component: HomeContent
     },
     {
-      name: 'login',
-      path: '/login',
-      component: login
+      name: 'ApplyForm',
+      path: '/ApplyForm',
+      component: ApplyForm
     },
     {
       name: 'competerule',
