@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="enterCurtain" :style="'height: ' + Height"></div>
+    <div class="enterCurtain" :style="'height: ' + Height">Hackathon</div>
     <HackIntro class="Hackintro" style="position: fixed"></HackIntro>
     <CompitiIntro class="Compitiintro"></CompitiIntro>
     <Notice class="Notice"></Notice>
@@ -40,5 +40,10 @@ export default {
   .enterCurtain {
     width: 100%;
     background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Hackathon";
+    font-size: 350px;
   }
 </style>
