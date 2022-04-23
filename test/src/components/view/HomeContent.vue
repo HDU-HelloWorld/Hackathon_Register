@@ -39,7 +39,8 @@ export default {
 
   .enterCurtain {
     width: 100%;
-    background-color: #fff;
+    background-color: rgb(17, 17, 17);
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;

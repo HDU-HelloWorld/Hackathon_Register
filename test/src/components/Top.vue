@@ -120,8 +120,6 @@ export default {
     .top-barrer{
       min-width: 1000px;
       width: 100%;
-      height: 80px;
-      line-height: 110px;
       display: flex;
       justify-content: space-between;
       position: fixed;
@@ -132,22 +130,16 @@ export default {
       .left{
         width: 200px;
         margin-left: 50px;
-        height: 50px;
-        line-height: 50px;
         margin-top: 20px;
         text-align: center;
       }
       .right{
         width: 850px;
-        height: 50px;
         // background-color: red;
         display: flex;
         justify-content: space-evenly;
         list-style-type: none;
-        line-height: 50px;
-        margin-top: 30px;
         .right-btn{
-          height: 50px;
           border: none;
           background-color: transparent;
           outline: none;
