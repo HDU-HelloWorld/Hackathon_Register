@@ -115,7 +115,7 @@ export default {
     display: inline-block ;
     background-color: white;
     border-bottom: 1px white solid;
-    box-shadow: 0 0 50px rgba(0, 0, 0, .9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .9);
     font-size: 28px;
     .top-barrer{
       min-width: 1000px;
