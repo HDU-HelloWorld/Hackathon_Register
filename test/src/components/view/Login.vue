@@ -10,53 +10,67 @@
         <!-- 下面为一个行内显示示例 -->
         <el-row>
           <el-col :span="12" :offset="0">
-            <el-form-item label="姓名" prop="name">
-              <el-input v-model="form.name"></el-input>
+            <el-form-item label="队长" prop="master">
+              <el-input v-model="form.master"></el-input>
             </el-form-item>
           </el-col>
-          <el-col :span="12" :offset="0" prop="age">
-            <el-form-item label="年龄">
-              <el-input v-model="form.age"></el-input>
+          <el-col :span="12" :offset="0">
+            <el-form-item label="学号" prop="stuNum">
+              <el-input v-model="form.stuNum"></el-input>
             </el-form-item>
           </el-col>
         </el-row>
+        <el-row v-for="(teammate, index) in form.teammates" :key="teammate.key">
+          <el-col :span="12" :offset="0">
+            <el-form-item :label="'队员' + (Number(index) + 1)" :prop="'teammates.' + index + '.name'">
+              <el-input v-model="form.teamSize" v-if="false"></el-input>
+              <el-input v-model="form.master"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span="12" :offset="0">
+            <el-form-item label="学号" prop="stuNum">
+              <el-input v-model="form.stuNum"></el-input>
+            </el-form-item>
+          </el-col>
+        </el-row>
+        <el-form-item label="所在学院" prop="college">
+          <el-input v-model="form.college"></el-input>
+        </el-form-item>
+        <el-form-item label="所在年级">
+          <el-select v-model="form.grader">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.label"
+            >
+            </el-option>
+          </el-select>
+        </el-form-item>
         <el-form-item label="电话" prop="phone">
           <el-input v-model="form.phone"></el-input>
         </el-form-item>
         <el-form-item label="邮箱" prop="email">
           <el-input v-model="form.email"></el-input>
         </el-form-item>
-        <div class="floor">
-          <el-form-item label="所在学院" prop="college">
-            <el-input v-model="form.college"></el-input>
-          </el-form-item>
-          <el-form-item label="所在年级">
-            <el-select v-model="form.grader">
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.label"
-              >
-              </el-option>
-            </el-select>
-          </el-form-item>
-        </div>
         <el-row>
-          <el-col :span="6">
-            <el-form-item label="是否组队" class="team">
-              <el-checkbox v-model="form.team" name="type"></el-checkbox>
-            </el-form-item>
-          </el-col>
           <el-col :span="18">
-            <el-form-item label="队名" v-if="form.team">
+            <el-form-item label="队名" prop="teamname">
               <el-input v-model="form.teamname"></el-input>
             </el-form-item>
           </el-col>
         </el-row>
         <el-form-item>
-          <el-button type="primary" @click="submitForm('form')" :disabled="!agreement">提交</el-button>
-          <el-button type="secondary" @click="resetForm('form')" :disabled="!agreement">取消</el-button>
+          <el-button
+            type="primary"
+            @click="submitForm('form')"
+            :disabled="!agreement"
+            >提交</el-button
+          >
+          <el-button type="secondary" @click="addTeammate" :disabled="!(form.teamSize < 6)">添加队员</el-button>
+          <el-button type="secondary" @click="resetForm('form')"
+            >取消</el-button
+          >
         </el-form-item>
         <el-row>
           <el-col>
@@ -83,15 +97,20 @@ export default {
     return {
       panduan: '',
       form: {
-        name: '',
-        age: '',
+        master: '',
+        stuNum: '',
+        teammates: [{
+          id: 1,
+          name: '',
+          stuNum: ''
+        }],
         phone: '',
         email: '',
         college: '',
         grader: '',
-        team: true,
         teamname: '',
-        intro: ''
+        intro: '',
+        teamSize: 2
       },
       agreement: false,
       rules: {
@@ -99,10 +118,10 @@ export default {
           { required: true, message: '请输入姓名', trigger: 'blur' },
           { min: 0, max: 15, message: '长度在 0 到 15 个字符', trigger: 'blur' }
         ],
-        age: [
-          { required: true, message: '请输入年龄', trigger: 'blur' },
-          { type: 'number', message: '请输入数字', trigger: 'blur' },
-          { min: 0, max: 15, message: '长度在 0 到 15 个字符', trigger: 'blur' }
+        stuNum: [
+          { required: true, message: '请输入学号', trigger: 'blur' },
+          { pattern: /^[0-9]*$/, message: '学号应为数字', trigger: 'blur' },
+          { min: 8, max: 8, message: '学号格式不正确', trigger: 'blur' }
         ],
         phone: [
           { required: true, message: '请输入电话', trigger: 'blur' },
@@ -125,7 +144,10 @@ export default {
           { min: 0, max: 15, message: '长度在 0 到 15 个字符', trigger: 'blur' }
         ],
         team: [],
-        teamname: []
+        teamname: [
+          { required: true, message: '请输入队伍名', trigger: 'blur' },
+          { min: 0, max: 10, message: '队名过长', trigger: 'blur' }
+        ]
       },
       options: [{
         value: '选项1',
@@ -156,6 +178,15 @@ export default {
     },
     resetForm (formName) {
       this.$refs[formName].resetFields()
+    },
+    addTeammate () {
+      this.teamSize = parseInt(this.teamSize) + 1
+      this.form.teammates.push({
+        id: this.teamSize - 1,
+        name: '',
+        stuNum: ''
+      })
+      console.log(this.teamSize)
     }
   }
 }
