@@ -2,6 +2,7 @@
     <div class="top">
       <div class="login">
         <button class="btn" @click="showLogin">我要报名
+          <span></span><span></span><span></span><span></span>
         </button>
       </div>
       <div class="top-barrer">
