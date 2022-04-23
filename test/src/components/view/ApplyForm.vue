@@ -23,13 +23,12 @@
         <el-row v-for="(teammate, index) in form.teammates" :key="teammate.key">
           <el-col :span="12" :offset="0">
             <el-form-item :label="'队员' + (Number(index) + 1)" :prop="'teammates.' + index + '.name'">
-              <el-input v-model="form.teamSize" v-if="false"></el-input>
-              <el-input v-model="form.master"></el-input>
+              <el-input v-model="teammate.name"></el-input>
             </el-form-item>
           </el-col>
           <el-col :span="12" :offset="0">
             <el-form-item label="学号" prop="stuNum">
-              <el-input v-model="form.stuNum"></el-input>
+              <el-input v-model="teammate.stuNum"></el-input>
             </el-form-item>
           </el-col>
         </el-row>
@@ -67,7 +66,7 @@
             :disabled="!agreement"
             >提交</el-button
           >
-          <el-button type="secondary" @click="addTeammate" :disabled="!(form.teamSize < 6)">添加队员</el-button>
+          <el-button type="secondary" @click="addTeammate" :disabled="!(form.teamSize < 5)">添加队员</el-button>
           <el-button type="secondary" @click="resetForm('form')"
             >取消</el-button
           >
@@ -98,7 +97,6 @@ export default {
         master: '',
         stuNum: '',
         teammates: [{
-          id: 1,
           name: '',
           stuNum: ''
         }],
@@ -178,13 +176,12 @@ export default {
       this.$refs[formName].resetFields()
     },
     addTeammate () {
-      this.teamSize = parseInt(this.teamSize) + 1
+      this.form.teamSize++
       this.form.teammates.push({
-        id: this.teamSize - 1,
         name: '',
         stuNum: ''
       })
-      console.log(this.teamSize)
+      console.log(this.form.teamSize)
     },
     scrool () {
       window.scrollTo({
