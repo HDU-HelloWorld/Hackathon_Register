@@ -105,11 +105,6 @@ export default {
 .el-menu--horizontal>.el-menu-item.is-active {
   border-bottom: 2px solid #B6DEDE ;
 }
-  // .topText {
-  //   top: 5px;
-  //   margin-top: 5px;
-  //   font-size: 20px;
-  // }
   .top{
     position: fixed;
     min-width: 1000px;
@@ -130,61 +125,6 @@ export default {
       left: 0px;
       z-index: 999;
       background-color: #fff;
-      .left{
-        width: 200px;
-        margin-left: 50px;
-        margin-top: 20px;
-        text-align: center;
-      }
-      .right{
-        width: 850px;
-        // background-color: red;
-        display: flex;
-        justify-content: space-evenly;
-        list-style-type: none;
-        .right-btn{
-          border: none;
-          background-color: transparent;
-          outline: none;
-          cursor: pointer;
-          &:hover{
-            border-bottom: 5px solid black;
-          }
-        }
-      }
-    }
-    img{
-      margin-top: 110px;
-      display: block;
-      width: 100%;
-      min-width: 1000px;
-    }
-    .top-bottom{
-      min-width: 1000px;
-      width: 100%;
-      height: 80px;
-      display: flex;
-      list-style-type: none;
-      margin-top: 5px;
-      background: linear-gradient(200deg,#00cbf6,#66a6ff);
-      margin-bottom: 8px;
-      .bottom-left{
-        border: none;
-        outline: none;
-        background-color: transparent ;
-        min-width: 130px;
-        margin-top: 20px;
-        margin-left: 50px;
-        height: 40px;
-        line-height: 40px;
-        width: 130px;
-        cursor: pointer;
-        text-align: center;
-        &:hover{
-          border-bottom: 5px solid black;
-          transition:0.5;
-        }
-      }
     }
     .login{
     position: fixed;
