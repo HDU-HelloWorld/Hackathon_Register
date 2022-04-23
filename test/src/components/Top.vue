@@ -13,6 +13,26 @@
           <el-menu-item index="4">赛程安排</el-menu-item>
           <el-menu-item index="5">大赛支持</el-menu-item>
         </el-menu>
+          <div class="line"></div>
+          <el-menu
+            :default-active="activeIndex2"
+            class="el-menu-demo top"
+            mode="horizontal"
+            @select="handleSelect"
+            background-color="#fff"
+            text-color="#000"
+            active-text-color="#ffd04b">
+            <el-menu-item index="1" class="topText">Hackathon简介</el-menu-item>
+            <el-menu-item index="2" class="topText">比赛介绍</el-menu-item>
+            <el-submenu index="3" class="topText">
+              <div slot="title" class="topText">参赛须知</div>
+              <el-menu-item index="3-1" class="topText">比赛流程</el-menu-item>
+              <el-menu-item index="3-2" class="topText">比赛规则</el-menu-item>
+              <el-menu-item index="3-3" class="topText">评分规则</el-menu-item>
+            </el-submenu>
+            <el-menu-item index="4" class="topText">赛程安排</el-menu-item>
+            <el-menu-item index="5" class="topText">大赛支持</el-menu-item>
+          </el-menu>
       </div>
     </div>
 </template>
@@ -88,6 +108,11 @@ export default {
     text-decoration: none;
     color: black;
   }
+  .topText {
+    top: 5px;
+    margin-top: 5px;
+    font-size: 20px;
+  }
   .top{
     min-width: 1000px;
     width: 100%;
@@ -100,7 +125,7 @@ export default {
     .top-barrer{
       min-width: 1000px;
       width: 100%;
-      height: 110px;
+      height: 80px;
       line-height: 110px;
       display: flex;
       justify-content: space-between;
@@ -208,6 +233,8 @@ export default {
           border-radius: 50%;
           transform: translateY (150%);
           left: calc((var( --n ) - 1) * 25% );
+          transform: translateX(150%);
+          top: calc((var( --n ) - 1) * 25% );
           transition: 0.5s;
           transition-delay: calc((var( --n ) - 1) * 0.1s );
           &:nth-child(1){
