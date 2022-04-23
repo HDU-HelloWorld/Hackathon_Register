@@ -89,10 +89,8 @@
 </template>
 
 <script>
-import ipt from '../common/ipt.vue'
 export default {
-  components: { ipt },
-  name: 'login',
+  name: 'ApplyForm',
   data () {
     return {
       panduan: '',
@@ -187,7 +185,16 @@ export default {
         stuNum: ''
       })
       console.log(this.teamSize)
+    },
+    scrool () {
+      window.scrollTo({
+        'top': 6000, // 原来是1300
+        'behavior': 'smooth'
+      })
     }
+  },
+  mounted () {
+    this.$bus.$on('scrool-6', this.scrool)
   }
 }
 

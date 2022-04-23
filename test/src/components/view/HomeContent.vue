@@ -5,6 +5,7 @@
     <notice class="notice"></notice>
     <plan class="plan"></plan>
     <support class="support"></support>
+    <ApplyForm class="ApplyForm"></ApplyForm>
   </div>
 </template>
 
@@ -14,8 +15,9 @@ import HackIntro from '../HackIntro.vue'
 import Notice from '../Notice.vue'
 import Plan from '../Plan.vue'
 import Support from '../Support.vue'
+import ApplyForm from './ApplyForm'
 export default {
-  components: { HackIntro, CompitiIntro, Plan, Notice, Support }
+  components: { HackIntro, CompitiIntro, Plan, Notice, Support, ApplyForm }
 
 }
 </script>
