@@ -206,7 +206,7 @@ export default {
           height: 100%;
           background-color: #fff;
           border-radius: 50%;
-          transform: translateY(150%);
+          transform: translateY (150%);
           left: calc((var( --n ) - 1) * 25% );
           transition: 0.5s;
           transition-delay: calc((var( --n ) - 1) * 0.1s );
