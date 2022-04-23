@@ -14,18 +14,13 @@
             mode="horizontal"
             @select="handleSelect"
             background-color="#fff"
-            text-color="#000"
-            active-text-color="#ffd04b">
-            <el-menu-item index="1" class="topText">Hackathon简介</el-menu-item>
-            <el-menu-item index="2" class="topText">比赛介绍</el-menu-item>
-            <el-submenu index="3" class="topText">
-              <template slot="title">参赛须知</template>
-              <el-menu-item index="3-1" class="topText">比赛流程</el-menu-item>
-              <el-menu-item index="3-2" class="topText">比赛规则</el-menu-item>
-              <el-menu-item index="3-3" class="topText">评分规则</el-menu-item>
-            </el-submenu>
-            <el-menu-item index="4" class="topText">赛程安排</el-menu-item>
-            <el-menu-item index="5" class="topText">大赛支持</el-menu-item>
+            text-color="#171717"
+            active-text-color="#63CF79">
+            <el-menu-item index="1">Hackathon简介</el-menu-item>
+            <el-menu-item index="2">比赛介绍</el-menu-item>
+            <el-menu-item index="3">参赛须知</el-menu-item>
+            <el-menu-item index="4">赛程安排</el-menu-item>
+            <el-menu-item index="5">大赛支持</el-menu-item>
           </el-menu>
       </div>
     </div>
@@ -102,6 +97,14 @@ export default {
     text-decoration: none;
     color: black;
   }
+  .el-menu-item.is-active {
+    color: #B6DEDE ;
+    font-size: 18px ;
+    font-weight: 3px ;
+}
+.el-menu--horizontal>.el-menu-item.is-active {
+  border-bottom: 2px solid #B6DEDE ;
+}
   // .topText {
   //   top: 5px;
   //   margin-top: 5px;
