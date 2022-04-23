@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import '@/assets/fonts/text.css'
 
 // 引入Element UI库
 import ElementUI from 'element-ui'

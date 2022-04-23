@@ -22,7 +22,15 @@
         </el-row>
         <el-row v-for="(teammate, index) in form.teammates" :key="teammate.key">
           <el-col :span="12" :offset="0">
-            <el-form-item :label="'队员' + (Number(index) + 1)" :prop="'teammates.' + index + '.name'">
+            <el-form-item
+              :label="'队员' + (Number(index) + 1)"
+              :prop="'teammates.' + index + '.name'"
+              :rules="{
+                required: true,
+                message: '请输入队员姓名',
+                trigger: 'blur'
+              }"
+            >
               <el-input v-model="teammate.name"></el-input>
             </el-form-item>
           </el-col>
@@ -66,7 +74,12 @@
             :disabled="!agreement"
             >提交</el-button
           >
-          <el-button type="secondary" @click="addTeammate" :disabled="!(form.teamSize < 5)">添加队员</el-button>
+          <el-button
+            type="secondary"
+            @click="addTeammate"
+            :disabled="!(form.teamSize < 5)"
+            >添加队员</el-button
+          >
           <el-button type="secondary" @click="resetForm('form')"
             >取消</el-button
           >
@@ -110,7 +123,7 @@ export default {
       },
       agreement: false,
       rules: {
-        name: [
+        master: [
           { required: true, message: '请输入姓名', trigger: 'blur' },
           { min: 0, max: 15, message: '长度在 0 到 15 个字符', trigger: 'blur' }
         ],
@@ -206,7 +219,7 @@ export default {
 .wrapper {
   display: flex;
   flex-direction: column;
-  width: 450px;
+  width: 100%;
   background-color: #fff;
   padding: 25px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);

@@ -2,7 +2,6 @@
     <div class="top">
       <div class="login">
         <button class="btn" @click="showLogin">我要报名
-          <span></span><span></span><span></span><span></span><span></span>
         </button>
       </div>
       <div class="top-barrer">
@@ -20,7 +19,7 @@
             <el-menu-item index="1" class="topText">Hackathon简介</el-menu-item>
             <el-menu-item index="2" class="topText">比赛介绍</el-menu-item>
             <el-submenu index="3" class="topText">
-              <div slot="title" class="topText">参赛须知</div>
+              <template slot="title">参赛须知</template>
               <el-menu-item index="3-1" class="topText">比赛流程</el-menu-item>
               <el-menu-item index="3-2" class="topText">比赛规则</el-menu-item>
               <el-menu-item index="3-3" class="topText">评分规则</el-menu-item>
@@ -103,12 +102,13 @@ export default {
     text-decoration: none;
     color: black;
   }
-  .topText {
-    top: 5px;
-    margin-top: 5px;
-    font-size: 20px;
-  }
+  // .topText {
+  //   top: 5px;
+  //   margin-top: 5px;
+  //   font-size: 20px;
+  // }
   .top{
+    position: fixed;
     min-width: 1000px;
     width: 100%;
     min-width: 800px;
@@ -130,7 +130,7 @@ export default {
       z-index: 999;
       background-color: #fff;
       .left{
-        width: 150px;
+        width: 200px;
         margin-left: 50px;
         height: 50px;
         line-height: 50px;

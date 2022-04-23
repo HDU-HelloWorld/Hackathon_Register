@@ -1,10 +1,11 @@
 <template>
   <div class="wrapper">
-    <hack-intro class="hackintro"></hack-intro>
-    <compiti-intro class="compitiintro"></compiti-intro>
-    <notice class="notice"></notice>
-    <plan class="plan"></plan>
-    <support class="support"></support>
+    <div class="enterCurtain" :style="'height: ' + Height"></div>
+    <HackIntro class="Hackintro" style="position: fixed"></HackIntro>
+    <CompitiIntro class="Compitiintro"></CompitiIntro>
+    <Notice class="Notice"></Notice>
+    <Plan class="Plan"></Plan>
+    <Support class="Support"></Support>
     <ApplyForm class="ApplyForm"></ApplyForm>
   </div>
 </template>
@@ -17,14 +18,27 @@ import Plan from '../Plan.vue'
 import Support from '../Support.vue'
 import ApplyForm from './ApplyForm'
 export default {
-  components: { HackIntro, CompitiIntro, Plan, Notice, Support, ApplyForm }
-
+  components: { HackIntro, CompitiIntro, Plan, Notice, Support, ApplyForm },
+  data () {
+    return {
+      Height: window.innerHeight + 'px'
+    }
+  },
+  mounted () {
+    window.onresize = () => {
+      document.querySelector('.enterCurtain').setAttribute('style', 'height: ' + window.innerHeight + 'px')
+    }
+  }
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   .wrapper{
     width: 100%;
-    margin: 100px auto;
+  }
+
+  .enterCurtain {
+    width: 100%;
+    background-color: #fff;
   }
 </style>
