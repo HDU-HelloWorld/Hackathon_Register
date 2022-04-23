@@ -75,9 +75,7 @@
 </template>
 
 <script>
-import ipt from '../common/ipt.vue'
 export default {
-  components: { ipt },
   name: 'ApplyForm',
   data () {
     return {

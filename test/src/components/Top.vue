@@ -2,10 +2,10 @@
     <div class="top">
       <div class="top-barrer">
         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-          <el-menu-item index="1">Hackathon简介</el-menu-item>
-          <el-menu-item index="2">比赛介绍</el-menu-item>
+          <el-menu-item index="1" @click=showDetail>Hackathon简介</el-menu-item>
+          <el-menu-item index="2" @click="showDetail02">比赛介绍</el-menu-item>
           <el-submenu index="3">
-            <template slot="title">参赛须知</template>
+            <div slot="title">参赛须知</div>
             <el-menu-item index="3-1">比赛流程</el-menu-item>
             <el-menu-item index="3-2">比赛规则</el-menu-item>
             <el-menu-item index="3-3">评分规则</el-menu-item>
@@ -206,13 +206,8 @@ export default {
           height: 25%;
           background-color: #fff;
           border-radius: 50%;
-<<<<<<< HEAD
           transform: translateY (150%);
           left: calc((var( --n ) - 1) * 25% );
-=======
-          transform: translateX(150%);
-          top: calc((var( --n ) - 1) * 25% );
->>>>>>> db219c3d96cd30f8ecb1759bfaaaf50b027b6ee4
           transition: 0.5s;
           transition-delay: calc((var( --n ) - 1) * 0.1s );
           &:nth-child(1){
@@ -226,10 +221,6 @@ export default {
           }
           &:nth-child(4){
             --n:4;
-          }
-          &:focus{
-            border: none;
-            outline: none;
           }
         }
       }

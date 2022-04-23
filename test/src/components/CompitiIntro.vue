@@ -1,6 +1,6 @@
 <template>
   <div class="introduce">
-    <h1>比赛介绍
+    <h1 id="scr">比赛介绍
       <hr>
     </h1>
     <div class="exp">
@@ -66,8 +66,9 @@ export default {
   },
   methods: {
     scrool () {
+      let toptwo = document.querySelector('#scr')
       window.scrollTo({
-        'top': 1210, // 原来是1300
+        'top': toptwo.offsetTop,
         'behavior': 'smooth'
       })
     }

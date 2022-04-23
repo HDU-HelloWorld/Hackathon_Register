@@ -1,6 +1,6 @@
 <template>
   <div class="notice">
-    <h1 class="title">参赛须知
+    <h1 id="title">参赛须知
       <hr>
     </h1>
     <div class="exp">
@@ -43,8 +43,9 @@ export default {
   },
   methods: {
     scrool () {
+      let top = document.querySelector('#title')
       window.scrollTo({
-        'top': 3590, // emmm之后应该是写成一个变量的形式改变,原来是4040
+        'top': top, // emmm之后应该是写成一个变量的形式改变,原来是4040
         'behavior': 'smooth'
       })
     }

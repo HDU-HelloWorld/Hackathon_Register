@@ -1,6 +1,6 @@
 <template>
   <div class="hackintro">
-    <h1 ref="title" @click="showlocation">Hackathon简介
+    <h1 id="title">Hackathon简介
       <hr>
     </h1>
     <div class="exp">
@@ -24,18 +24,21 @@ Hack精神的软件发展相关人员所热衷。
 
 <script>
 export default {
+  data () {
+    return {
+      location: ''
+    }
+  },
   mounted () {
     this.$bus.$on('scrool', this.scrool)
   },
   methods: {
     scrool () {
+      let top = document.querySelector('#title')
       window.scrollTo({
-        'top': 480, // emmm之后应该是写成一个变量的形式改变
+        'top': top.offsetTop - 300, // emmm之后应该是写成一个变量的形式改变
         'behavior': 'smooth'
       })
-    },
-    showlocation () {
-      alert(this.refs.title.offset().top)
     }
   }
 }
