@@ -1,5 +1,5 @@
 <template>
-  <div class="introduce">
+  <div class="introduce" ref="introduce">
     <h1 id="scr">比赛介绍
       <hr>
     </h1>
@@ -71,6 +71,9 @@ export default {
         'top': toptwo.offsetTop,
         'behavior': 'smooth'
       })
+    },
+    jumpto () {
+      document.querySelector('.scr').scrollIntoView()
     }
   }
 }

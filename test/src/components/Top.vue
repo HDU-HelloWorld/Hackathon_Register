@@ -125,12 +125,12 @@ a {
 }
 .top {
   position: fixed;
+  z-index: 1;
   min-width: 1000px;
   width: 100%;
   min-width: 800px;
   display: inline-block;
   background-color: white;
-  border-bottom: 1px white solid;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
   font-size: 28px;
   .top-barrer {
@@ -158,7 +158,6 @@ img {
   list-style-type: none;
   margin-top: 5px;
   background: linear-gradient(200deg, #00cbf6, #66a6ff);
-  margin-bottom: 8px;
   .bottom-left {
     border: none;
     outline: none;
