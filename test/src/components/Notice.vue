@@ -84,14 +84,12 @@ export default {
         width: 73%;
       }
       .title{
-        background: rgba(166, 226, 241, 0.6);
         width: 15%;
         text-align: center;
-        box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
       }
       .content{
-        background: rgba(231, 222, 144, 0.6);
-        box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+        padding: 25px;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
         border-radius: 10px;
       }
     }

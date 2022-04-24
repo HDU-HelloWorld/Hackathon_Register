@@ -63,7 +63,6 @@ export default {
       font-weight: 500;
       line-height: 45px;
       width: 100%;
-      background: rgba(150, 197, 241, 0.5);
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
       border-radius: 10px;
     }
