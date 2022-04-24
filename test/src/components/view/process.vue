@@ -77,9 +77,8 @@ export default {
       .detail{
         border-radius: 15px;
         width: 22%;
-        padding: 0 15px;
-        background: rgba(178, 246, 148, 0.3);
-        box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+        padding: 25px;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
         h3{
           margin-top: 5%;
           text-align: center;
@@ -98,8 +97,7 @@ export default {
         border-radius: 15px ;
         width: 22%;
         padding: 0 15px;
-        background: rgba(232, 132, 132, 0.3);
-        box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
         h3{
           margin-top: 5%;
           text-align: center;

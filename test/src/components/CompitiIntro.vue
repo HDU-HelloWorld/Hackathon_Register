@@ -116,6 +116,8 @@ export default {
         // text-align: center;
       }
       .content{
+        font-weight: 900;
+        font-size: 24px;
         padding: 30px;
         box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
         border-radius: 10px;

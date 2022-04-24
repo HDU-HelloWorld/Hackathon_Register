@@ -198,30 +198,6 @@ img {
     &:hover span {
       transform: translateX(-40%) scale(2);
     }
-    span {
-      z-index: -1;
-      position: absolute;
-      width: 100%;
-      height: 25%;
-      transform: translateY (150%);
-      left: calc((var(--n) - 1) * 25%);
-      transform: translateX(150%);
-      top: calc((var(--n) - 1) * 25%);
-      transition: 0.5s;
-      transition-delay: calc((var(--n) - 1) * 0.1s);
-      &:nth-child(1) {
-        --n: 1;
-      }
-      &:nth-child(2) {
-        --n: 2;
-      }
-      &:nth-child(3) {
-        --n: 3;
-      }
-      &:nth-child(4) {
-        --n: 4;
-      }
-    }
   }
 }
 </style>
