@@ -20,7 +20,7 @@ export default {
 }
 body{
   box-sizing: border-box;
-  background-color: #f4f4f4;
+  background-color: #f4f4f4c4;
   height: 3000px;
   min-width: 1000px;
 }

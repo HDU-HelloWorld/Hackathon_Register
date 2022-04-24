@@ -131,7 +131,6 @@ a {
   min-width: 800px;
   display: inline-block;
   background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
   font-size: 28px;
   .top-barrer {
     min-width: 1000px;
@@ -157,7 +156,6 @@ img {
   display: flex;
   list-style-type: none;
   margin-top: 5px;
-  background: linear-gradient(200deg, #00cbf6, #66a6ff);
   .bottom-left {
     border: none;
     outline: none;
@@ -186,7 +184,6 @@ img {
     font-size: 50px;
     // color: rgb(63,207,79);
     color: rgb(63, 207, 79);
-    background-color: rgba(0, 0, 0, 0);
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -197,30 +194,6 @@ img {
     }
     &:hover span {
       transform: translateX(-40%) scale(2);
-    }
-    span {
-      z-index: -1;
-      position: absolute;
-      width: 100%;
-      height: 25%;
-      transform: translateY (150%);
-      left: calc((var(--n) - 1) * 25%);
-      transform: translateX(150%);
-      top: calc((var(--n) - 1) * 25%);
-      transition: 0.5s;
-      transition-delay: calc((var(--n) - 1) * 0.1s);
-      &:nth-child(1) {
-        --n: 1;
-      }
-      &:nth-child(2) {
-        --n: 2;
-      }
-      &:nth-child(3) {
-        --n: 3;
-      }
-      &:nth-child(4) {
-        --n: 4;
-      }
     }
   }
 }

@@ -99,6 +99,7 @@ export default {
     }
     .exp{
       width: 100%;
+      padding: 25px;
       div {
         width: 70%;
         line-height: 45px;
@@ -109,17 +110,15 @@ export default {
       .title{
         text-align: center;
         width: 15%;
-        background: rgba(240, 142, 142, 0.6);
-        box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
       }
       .spe{
         font-weight: bold;
-        background: rgba(167, 237, 173, 0.4);
         // text-align: center;
       }
       .content{
-        background: rgba(241, 197, 242, 0.6);
-        box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+        font-weight: 900;
+        font-size: 24px;
+        padding: 30px;
         border-radius: 10px;
       }
     }
