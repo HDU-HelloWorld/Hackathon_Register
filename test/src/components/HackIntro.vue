@@ -53,10 +53,10 @@ export default {
   .hackintro{
   opacity: 0.75;
   position: relative;
+  top:30%;
+  left: 5%;
   z-index: -1;
   width: 35%;
-  height: 70%;
-  margin: 20px 5%;
   background: black;
   border: 4px solid transparent;
   border-image: linear-gradient(
