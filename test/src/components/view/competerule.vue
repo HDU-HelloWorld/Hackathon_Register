@@ -59,7 +59,6 @@ export default {
         width: 28%;
         height: 600px;
         border-radius: 20px;
-        box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
         h3{
           margin-top: 5%;
           text-align: center;
@@ -73,7 +72,6 @@ export default {
       height: 600px;
       padding: 0 20px;
       border-radius: 20px;
-      box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
       h3{
           margin-top: 5%;
           text-align: center;
@@ -88,7 +86,6 @@ export default {
       height: 600px;
       padding: 25px;
       border-radius: 20px;
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
       h3{
         margin-top: 5%;
         text-align: center;

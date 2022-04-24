@@ -161,5 +161,29 @@ flood-color: #0e7071;
       font-size: 26px;
       line-height: 45px;
     }
+<<<<<<< HEAD
+    .exp{
+      width: 100%;
+      b {
+        margin-left: 28px;
+      }
+      div {
+        line-height: 38px;
+        margin-left: 10px;
+        font-size: 24px;
+        font-weight: 500;
+        width: 73%;
+      }
+      .title{
+        width: 15%;
+        text-align: center;
+      }
+      .content{
+        padding: 25px;
+        border-radius: 10px;
+      }
+    }
+=======
+>>>>>>> c449e5057982b1df4656168c80eccda9900212cf
   }
 </style>
