@@ -16,12 +16,14 @@
         </div>
       </div>
       <div class="backCurtain1">
-        <img
-          src="../../assets/vscode.png"
-          alt="vscode"
-          id="curtainPic1"
-          data-depth="0.4"
-        />
+        <div class="picBox1">
+          <img
+            src="../../assets/vscode.png"
+            alt="vscode"
+            id="curtainPic1"
+            data-depth="0.6"
+          />
+        </div>
       </div>
       <el-row class="startExplore">
         <el-col :span="2" :offset="11" data-depth="0.3">
@@ -83,20 +85,15 @@ export default {
     parallax.friction(0.2, 0.8)
     parallax.calibrate(true, true)
     parallax.scalar(3, 10)
-    let scene1 = document.querySelector('.backCurtain1')
+    let scene1 = document.querySelector('.picBox1')
     let parallax1 = new Parallax(scene1)
     // parallax1.friction(0.2, 0.8)
     parallax1.calibrate(false, false)
-    // parallax1.scalar(3, 10)
+    parallax1.scalar(20, 20)
     // let scene1 = document.querySelectorAll('.curtainText')
     // let parallax1 = new Parallax(scene1[0])
     // let parallax2 = new Parallax(scene1[1])
   }
-  // methods: {
-  //   explore () {
-  //     console.log('click')
-  //   }
-  // }
 }
 </script>
 
@@ -104,9 +101,12 @@ export default {
 #curtainPic1 {
   position: fixed;
   // right: -10%;
-  margin-left: 50%;
-  margin-top: 15%;
-  z-index: -2;
+  margin-left: 90%;
+  margin-top: 30%;
+}
+
+.picBox1 {
+  width: 100%;
 }
 
 .wrapper {
@@ -166,6 +166,11 @@ export default {
   // clip-path: polygon(75% 0, 100% 0%, 24% 100%, 0% 100%);
 }
 
+.backCurtain1 {
+  position: fixed;
+  z-index: -2;
+}
+
 .text1 {
   position: absolute;
   left: 10%;
@@ -179,5 +184,10 @@ export default {
 }
 
 .curtain {
+}
+
+.componentContainer {
+  background-color: #fff;
+  z-index: 1;
 }
 </style>
