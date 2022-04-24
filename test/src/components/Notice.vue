@@ -181,8 +181,6 @@ flood-color: #0e7071;
       font-size: 26px;
       line-height: 45px;
     }
-<<<<<<< HEAD
-=======
     .exp{
       width: 100%;
       b {
@@ -205,6 +203,5 @@ flood-color: #0e7071;
         border-radius: 10px;
       }
     }
->>>>>>> 158268fd99e5a0168c0a84c670f2a4eb2a57b382
   }
 </style>
