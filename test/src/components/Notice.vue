@@ -181,30 +181,5 @@ flood-color: #0e7071;
       font-size: 26px;
       line-height: 45px;
     }
-<<<<<<< HEAD
-=======
-    .exp{
-      width: 100%;
-      b {
-        margin-left: 28px;
-      }
-      div {
-        line-height: 38px;
-        margin-left: 10px;
-        font-size: 24px;
-        font-weight: 500;
-        width: 73%;
-      }
-      .title{
-        width: 15%;
-        text-align: center;
-      }
-      .content{
-        padding: 25px;
-        box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
-        border-radius: 10px;
-      }
-    }
->>>>>>> 158268fd99e5a0168c0a84c670f2a4eb2a57b382
   }
 </style>
