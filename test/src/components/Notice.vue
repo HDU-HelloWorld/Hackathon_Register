@@ -1,64 +1,44 @@
 <template>
   <div class="notice">
-    <el-tabs v-model="activeName" @tab-click="handleClick" type="border-card">
+    <el-tabs v-model="activeName" @tab-click="handleClick">
       <el-tab-pane label="参赛须知" name="first">
-          <h2 class="title">1.参赛报名：</h2>
-          <br>
-          <div class="content">开发者需以个人身份报名，报名时需提交个人身份信息。需要注意的是，国队参赛每个成员均需单独报名。若已经有国队，清在报名中备注团队报名。</div>
-          <br>
-          <div class="content">主办方会对报名行筛远，报名注册时附带个人简历、项目经历等资料，可提高筛选通过率。</div>
-          <br>
-          <div class="content">若被筛选通过，参赛者的邮箱将会收由大赛主办方发送的《Hack「中国」2018 Hackathon》参赛邀请邮件。故请留下有效邮箱地址。</div>
-          <br>
-          <h2 class="title">2.团队规模：</h2>
-          <br>
-          <div class="content">每个团队2-5人，每人最多选择1个团队加入</div>
-          <br>
-          <div class="content">参赛者提前组队，也可到现场自由组队。</div>
-          <br>
-          <h2 class="title">3.活动须知：</h2>
-          <br>
-          <div class="content">参赛者收到的参赛邀请邮件中将附带活动时间表，如无意外，基本活动安排与时间表无异，规定的活动时间内，在具体的活动地点将会有工作人员接应。</div>
-          <br>
-          <div class="content">比赛居时凭借参赛邀请邮件或邀情函进行签到，领取参赛证、身份卡、赛事资料及其他比赛相关物品。</div>
-          <br>
-          <h2 class="title">4.现场组队：</h2>
-          <br>
-          <div class="content">活动场会设有白板，准备现场组队的开发者可以将身份卡放置于白板上，可标注自己“能做什么，想做什么，在找怎样的人”等等关键词。不同的身份卡用于区分开发者角色，帮助快速组队。</div>
+        <h2 class="title">1.参赛报名：</h2>
+        <br>
+        <div class="content">开发者需以个人身份报名，报名时需提交个人身份信息。需要注意的是，国队参赛每个成员均需单独报名。若已经有国队，清在报名中备注团队报名。</div>
+        <br>
+        <div class="content">主办方会对报名行筛远，报名注册时附带个人简历、项目经历等资料，可提高筛选通过率。</div>
+        <br>
+        <div class="content">若被筛选通过，参赛者的邮箱将会收由大赛主办方发送的《Hack「中国」2018 Hackathon》参赛邀请邮件。故请留下有效邮箱地址。</div>
+        <br>
+        <h2 class="title">2.团队规模：</h2>
+        <br>
+        <div class="content">每个团队2-5人，每人最多选择1个团队加入</div>
+        <br>
+        <div class="content">参赛者提前组队，也可到现场自由组队。</div>
+        <br>
+        <h2 class="title">3.活动须知：</h2>
+        <br>
+        <div class="content">参赛者收到的参赛邀请邮件中将附带活动时间表，如无意外，基本活动安排与时间表无异，规定的活动时间内，在具体的活动地点将会有工作人员接应。</div>
+        <br>
+        <div class="content">比赛居时凭借参赛邀请邮件或邀情函进行签到，领取参赛证、身份卡、赛事资料及其他比赛相关物品。</div>
+        <br>
+        <h2 class="title">4.现场组队：</h2>
+        <br>
+        <div class="content">活动场会设有白板，准备现场组队的开发者可以将身份卡放置于白板上，可标注自己“能做什么，想做什么，在找怎样的人”等等关键词。不同的身份卡用于区分开发者角色，帮助快速组队。</div>
       </el-tab-pane>
       <el-tab-pane label="比赛流程" name="second">
-        <h2 class="title">1.比赛签到</h2>
-          <br>
-          <div class="content">参赛选手到达比赛现场，签到并领取相关物资。</div>
-          <br>
-          <h2 class="title">2.现场组队</h2>
-          <br>
-          <div class="content">准备现场组队的开发者可以将身份卡放置于现场准备的组队版上，标注自己“能做什么，想做什么，在找怎样的人”等等关键词。调试相关硬件设备。</div>
-          <br>
-          <h2 class="title">3.宣讲阶段</h2>
-          <br>
-          <div class="content">大赛主办方进行技术内容宣讲。开发者可选择感兴趣的内容参与，并就自己感兴趣的内容现场提问。</div>
-          <br>
-          <h2 class="title">4.开发阶段</h2>
-          <br>
-          <div class="content">参赛队伍进行24小时开发。开发者如果有用到现场技术服务方，可以随时通过赞助商的现场展位向大赛服务提供商询问技术问题。</div>
-          <br>
-          <h2 class="title">5.提交评审</h2>
-          <br>
-          <div class="content">参赛队伍可以在比赛开始后的20小时后开始提交产品，提交截止后，大赛评委会将选出80%优秀产品进行产品展示。</div>
-          <br>
-          <h2 class="title">6.观众入场：</h2>
-          <br>
-          <div class="content">参观比赛人员入场，观看产品展示环节。</div>
-          <br>
-          <h2 class="title">7.产品展示：</h2>
-          <br>
-          <div class="content">每件产品有5分钟时间，可以通过演说，实物演示等手段进行产品展示，评委会根据产品的创新性、实用性、完成度进行评分。</div>
-          <br>
-          <h2 class="title">8.颁奖典礼：</h2>
-          <br>
+        <el-steps :active="2" align-center>
+          <el-step title="1.比赛签到" description="参赛选手到达比赛现场，签到并领取相关物资。"></el-step>
+          <el-step title="2.现场组队" description="准备现场组队的开发者可以将身份卡放置于现场准备的组队版上，标注自己“能做什么，想做什么，在找怎样的人”等等关键词。调试相关硬件设备。"></el-step>
+          <el-step title="3.宣讲阶段" description="大赛主办方进行技术内容宣讲。开发者可选择感兴趣的内容参与，并就自己感兴趣的内容现场提问。"></el-step>
+          <el-step title="4.开发阶段" description="参赛队伍进行24小时开发。开发者如果有用到现场技术服务方，可以随时通过赞助商的现场展位向大赛服务提供商询问技术问题。"></el-step>
+          <el-step title="5.提交评审" description="参赛队伍可以在比赛开始后的20小时后开始提交产品，提交截止后，大赛评委会将选出80%优秀产品进行产品展示。"></el-step>
+          <el-step title="6.观众入场" description="参观比赛人员入场，观看产品展示环节。"></el-step>
+          <el-step title="7.产品展示" description="每件产品有5分钟时间，可以通过演说，实物演示等手段进行产品展示，评委会根据产品的创新性、实用性、完成度进行评分。"></el-step>
+          <el-step title="8.颁奖典礼" description="大赛评委会将在参加产品展示的产品中选出部分优秀产品，予以奖励。"></el-step>
+        </el-steps>
+        <br>
           <div class="content">大赛评委会将在参加产品展示的产品中选出部分优秀产品，予以奖励。</div>
-          <br>
       </el-tab-pane>
       <el-tab-pane label="比赛规则" name="third">
         <h2 class="title">赛前规定</h2>
@@ -157,10 +137,10 @@ export default {
     /** 鼠标滑过 item 的样式 */
     color: red !important;
   }
-.el-tabs__item.is-active {
-    /**高亮的 tab 样式 */
-    background: #0e7071 linear-gradient(to left, rgba(0, 255, 0, 0), rgb(47, 42, 98));
-  }
+// .el-tabs__item.is-active {
+//     /**高亮的 tab 样式 */
+//     background: #0e7071 linear-gradient(to left, rgba(0, 255, 0, 0), rgb(47, 42, 98));
+//   }
 .el-tabs__item{
 font-size:18px;
 flood-color: #0e7071;
