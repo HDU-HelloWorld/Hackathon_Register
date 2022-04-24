@@ -23,6 +23,7 @@
             id="curtainPic1"
             data-depth="0.6"
           />
+          <HackIntro class="Hackintro"></HackIntro>
         </div>
       </div>
       <el-row class="startExplore">
@@ -39,7 +40,6 @@
       </el-row>
     </div>
     <div ref="startPosition" class="componentContainer">
-      <!-- <HackIntro class="Hackintro" style="position: fixed"></HackIntro> -->
       <CompitiIntro class="Compitiintro"></CompitiIntro>
       <Notice class="Notice"></Notice>
       <Plan class="Plan"></Plan>
