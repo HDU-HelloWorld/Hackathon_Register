@@ -58,7 +58,6 @@ export default {
         padding: 0 20px;
         width: 28%;
         height: 600px;
-        background: rgba(155, 204, 240, 0.3);
         border-radius: 20px;
         box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
         h3{
@@ -73,7 +72,6 @@ export default {
       width: 28%;
       height: 600px;
       padding: 0 20px;
-      background: rgba(240, 177, 238, 0.3);
       border-radius: 20px;
       box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
       h3{
@@ -88,10 +86,9 @@ export default {
       .detail-right{
       width: 29%;
       height: 600px;
-      padding: 0 20px;
-      background: rgba(241, 244, 176, 0.3);
+      padding: 25px;
       border-radius: 20px;
-      box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
       h3{
         margin-top: 5%;
         text-align: center;
