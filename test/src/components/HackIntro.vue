@@ -51,7 +51,6 @@ export default {
 
 <style lang='less' scopde>
   .hackintro{
-<<<<<<< HEAD
   opacity: 0.75;
   position: relative;
   z-index: -1;
@@ -79,26 +78,6 @@ export default {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     // border-radius: 10px;
     color:white;
-=======
-    margin-top: 80px;
-    width: 75%;
-    margin-left: 15%;
-    h1{
-      margin-bottom: 40px;
-      hr{
-        margin-top: 9px;
-        height: 3px;
-        width: 370px;
-        background-color: rgb(42,199,180);
-      }
-    }
-    .exp{
-      font-size: 24px;
-      font-weight: 500;
-      line-height: 45px;
-      width: 100%;
-      border-radius: 10px;
->>>>>>> 832bd390c2b26c65a109418c2ceea292879ede53
     }
   }
 

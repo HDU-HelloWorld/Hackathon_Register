@@ -16,15 +16,6 @@
         </div>
       </div>
       <div class="backCurtain1">
-<<<<<<< HEAD
-        <img
-          src="../../assets/vscode.png"
-          alt="vscode"
-          id="curtainPic1"
-          data-depth="0.4"
-        />
-        <HackIntro class="Hackintro"></HackIntro>
-=======
         <div class="picBox1">
           <img
             src="../../assets/vscode.png"
@@ -32,8 +23,8 @@
             id="curtainPic1"
             data-depth="0.6"
           />
+          <HackIntro class="Hackintro"></HackIntro>
         </div>
->>>>>>> 832bd390c2b26c65a109418c2ceea292879ede53
       </div>
       <el-row class="startExplore">
         <el-col :span="2" :offset="11" data-depth="0.3">
@@ -192,10 +183,6 @@ export default {
   bottom: 10%;
 }
 
-<<<<<<< HEAD
-// .curtain {
-// }
-=======
 .curtain {
 }
 
@@ -203,5 +190,4 @@ export default {
   background-color: #fff;
   z-index: 1;
 }
->>>>>>> 832bd390c2b26c65a109418c2ceea292879ede53
 </style>
