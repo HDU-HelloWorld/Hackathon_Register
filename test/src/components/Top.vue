@@ -98,27 +98,31 @@ export default {
 </script>
 
 <style lang='less' scoped>
+.el-menu-demo {
+  background-image: linear-gradient(
+    to right; rgba(0, 0, 0, 0.8),
+    rgba(80, 168, 131, 0.7),
+    rgb(7, 42, 28)
+  );
+}
 a {
   text-decoration: none;
   color: black;
+}
+.navText {
+  font-family: "Hackathon";
+  font-size: 20px;
 }
 .el-menu-item.is-active {
   color: #b6dede;
   font-size: 18px;
   font-weight: 3px;
 }
-.navText {
-  font-family: "Hackathon";
-  font-size: 20px;
+.el-menu-item.is-active {
+  color: #b6dede;
+  font-size: 18px;
+  font-weight: 3px;
 }
-.el-menu--horizontal > .el-menu-item.is-active {
-  border-bottom: 2px solid #b6dede;
-}
-// .topText {
-//   top: 5px;
-//   margin-top: 5px;
-//   font-size: 20px;
-// }
 .top {
   position: fixed;
   min-width: 1000px;
@@ -138,108 +142,85 @@ a {
     top: 0px;
     left: 0px;
     z-index: 999;
-    background-color: #fff;
-    .left {
-      width: 200px;
-      margin-left: 50px;
-      margin-top: 20px;
-      text-align: center;
-    }
-    .right {
-      width: 850px;
-      // background-color: red;
-      display: flex;
-      justify-content: space-evenly;
-      list-style-type: none;
-      .right-btn {
-        border: none;
-        background-color: transparent;
-        outline: none;
-        cursor: pointer;
-        &:hover {
-          border-bottom: 5px solid black;
-        }
-      }
-    }
   }
-  img {
-    margin-top: 110px;
-    display: block;
-    width: 100%;
-    min-width: 1000px;
-  }
-  .top-bottom {
-    min-width: 1000px;
-    width: 100%;
-    height: 80px;
-    display: flex;
-    list-style-type: none;
-    margin-top: 5px;
-    background: linear-gradient(200deg, #00cbf6, #66a6ff);
-    margin-bottom: 8px;
-    .bottom-left {
-      border: none;
-      outline: none;
-      background-color: transparent;
-      min-width: 130px;
-      margin-top: 20px;
-      margin-left: 50px;
-      height: 40px;
-      line-height: 40px;
-      width: 130px;
-      cursor: pointer;
-      text-align: center;
-      &:hover {
-        border-bottom: 5px solid black;
-        transition: 0.5;
-      }
+}
+img {
+  margin-top: 110px;
+  display: block;
+  width: 100%;
+  min-width: 1000px;
+}
+.top-bottom {
+  min-width: 1000px;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  list-style-type: none;
+  margin-top: 5px;
+  background: linear-gradient(200deg, #00cbf6, #66a6ff);
+  margin-bottom: 8px;
+  .bottom-left {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    min-width: 130px;
+    margin-top: 20px;
+    margin-left: 50px;
+    height: 40px;
+    line-height: 40px;
+    width: 130px;
+    cursor: pointer;
+    text-align: center;
+    &:hover {
+      border-bottom: 5px solid black;
+      transition: 0.5;
     }
   }
-  .login {
-    position: fixed;
-    bottom: 10%;
-    right: 5%;
-    .btn {
-      border: 0;
-      font-family: 'Hackathon';
-      font-size: 50px;
-      // color: rgb(63,207,79);
-      color: rgb(63, 207, 79);
-      background-color: rgba(0, 0, 0, 0);
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
+}
+.login {
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  .btn {
+    border: 0;
+    font-family: 'Hackathon';
+    font-size: 50px;
+    // color: rgb(63,207,79);
+    color: rgb(63, 207, 79);
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 1;
+    &:hover {
+      color: #fff;
+    }
+    &:hover span {
+      transform: translateX(-40%) scale(2);
+    }
+    span {
+      z-index: -1;
+      position: absolute;
+      width: 100%;
+      height: 25%;
+      transform: translateY (150%);
+      left: calc((var(--n) - 1) * 25%);
+      transform: translateX(150%);
+      top: calc((var(--n) - 1) * 25%);
       transition: 0.5s;
-      z-index: 1;
-      &:hover {
-        color: #fff;
+      transition-delay: calc((var(--n) - 1) * 0.1s);
+      &:nth-child(1) {
+        --n: 1;
       }
-      &:hover span {
-        transform: translateX(-40%) scale(2);
+      &:nth-child(2) {
+        --n: 2;
       }
-      span {
-        z-index: -1;
-        position: absolute;
-        width: 100%;
-        height: 25%;
-        transform: translateY (150%);
-        left: calc((var(--n) - 1) * 25%);
-        transform: translateX(150%);
-        top: calc((var(--n) - 1) * 25%);
-        transition: 0.5s;
-        transition-delay: calc((var(--n) - 1) * 0.1s);
-        &:nth-child(1) {
-          --n: 1;
-        }
-        &:nth-child(2) {
-          --n: 2;
-        }
-        &:nth-child(3) {
-          --n: 3;
-        }
-        &:nth-child(4) {
-          --n: 4;
-        }
+      &:nth-child(3) {
+        --n: 3;
+      }
+      &:nth-child(4) {
+        --n: 4;
       }
     }
   }
