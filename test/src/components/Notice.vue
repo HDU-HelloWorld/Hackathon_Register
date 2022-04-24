@@ -89,7 +89,6 @@ export default {
       }
       .content{
         padding: 25px;
-        box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
         border-radius: 10px;
       }
     }
