@@ -1,11 +1,27 @@
 <template>
   <div class="wrapper">
-    <div class="curtain">
-      <div class="enterCurtain" :style="'height: ' + Height" data-depth="0.3">
-        Hackathon <br />「码」力全开
+    <div class="curtain" :style="'height: ' + Height">
+      <div class="enterCurtain" :style="'height: ' + Height">
+        <div class="curtainText">
+          <div class="text1" data-depth="0.3">Hackathon</div>
+          <br />
+          <div class="text2" data-depth="0.3">「码」力全开</div>
+        </div>
       </div>
-      <div class="backCurtain" :style="'height: ' + Height" data-depth="0.3">
-        Hackathon <br />「码」力全开
+      <div class="backCurtain" :style="'height: ' + Height">
+        <div class="curtainText">
+          <div class="text1">Hackathon</div>
+          <br />
+          <div class="text2">「码」力全开</div>
+        </div>
+      </div>
+      <div class="backCurtain1">
+        <img
+          src="../../assets/vscode.png"
+          alt="vscode"
+          id="curtainPic1"
+          data-depth="0.4"
+        />
       </div>
       <el-row class="startExplore">
         <el-col :span="2" :offset="11" data-depth="0.3">
@@ -20,13 +36,14 @@
         <el-col :span="11" :offset="0"></el-col>
       </el-row>
     </div>
-    <div ref="startPosition"></div>
-    <HackIntro class="Hackintro" style="position: fixed"></HackIntro>
-    <CompitiIntro class="Compitiintro"></CompitiIntro>
-    <Notice class="Notice"></Notice>
-    <Plan class="Plan"></Plan>
-    <Support class="Support"></Support>
-    <ApplyForm class="ApplyForm"></ApplyForm>
+    <div ref="startPosition" class="componentContainer">
+      <!-- <HackIntro class="Hackintro" style="position: fixed"></HackIntro> -->
+      <CompitiIntro class="Compitiintro"></CompitiIntro>
+      <Notice class="Notice"></Notice>
+      <Plan class="Plan"></Plan>
+      <Support class="Support"></Support>
+      <ApplyForm class="ApplyForm"></ApplyForm>
+    </div>
   </div>
 </template>
 
@@ -38,7 +55,7 @@ import Plan from '../Plan.vue'
 import Support from '../Support.vue'
 import ApplyForm from './ApplyForm'
 // 引入Parallax.js
-// import Parallax from 'parallax-js'
+import Parallax from 'parallax-js'
 export default {
   components: { HackIntro, CompitiIntro, Plan, Notice, Support, ApplyForm },
   data () {
@@ -56,13 +73,24 @@ export default {
         behavior: 'smooth'
       })
     })
-    // let scene = document.querySelector('.startExplore')
-    // let parallax = new Parallax(scene)
-    // // parallax.enable()
-    // // parallax.origin(0.5, 0.5)
-    // parallax.friction(0.2, 0.8)
-    // parallax.calibrate(true, true)
-    // parallax.scalar(3, 10)
+    window.addEventListener('scroll', () => {
+
+    })
+    let scene = document.querySelector('.startExplore')
+    let parallax = new Parallax(scene)
+    // parallax.enable()
+    // parallax.origin(0.5, 0.5)
+    parallax.friction(0.2, 0.8)
+    parallax.calibrate(true, true)
+    parallax.scalar(3, 10)
+    let scene1 = document.querySelector('.backCurtain1')
+    let parallax1 = new Parallax(scene1)
+    // parallax1.friction(0.2, 0.8)
+    parallax1.calibrate(false, false)
+    // parallax1.scalar(3, 10)
+    // let scene1 = document.querySelectorAll('.curtainText')
+    // let parallax1 = new Parallax(scene1[0])
+    // let parallax2 = new Parallax(scene1[1])
   }
   // methods: {
   //   explore () {
@@ -73,51 +101,83 @@ export default {
 </script>
 
 <style lang="less" scoped>
+#curtainPic1 {
+  position: fixed;
+  // right: -10%;
+  margin-left: 50%;
+  margin-top: 15%;
+  z-index: -2;
+}
+
 .wrapper {
   width: 100%;
+  overflow: hidden;
 }
 
 .exploreBtn {
+  position: fixed;
   font-size: 25px;
   background-color: rgb(63, 207, 79);
   border: 0;
+  pointer-events: auto; // parallax.js会阻止鼠标事件，重设鼠标事件确保按钮能够正常使用
 }
 
 .startExplore {
-  position: absolute;
+  position: fixed;
   bottom: 5%;
   width: 100%;
   height: 20%;
 }
 
 .enterCurtain {
+  position: fixed;
+  top: 0;
   width: 100%;
   background-color: #fff;
   color: rgb(63, 207, 79);
   display: flex;
-  z-index: 0;
+  z-index: -1;
   justify-content: center;
   align-items: center;
   font-family: 'Hackathon';
-  font-size: 200px;
+  font-size: 80px;
   -webkit-clip-path: polygon(75% 0, 100% 0%, 24% 100%, 0% 100%);
   clip-path: polygon(25% 0, 50% 0%, 24% 100%, 0% 100%);
 }
 
 .backCurtain {
-  position: absolute;
+  position: fixed;
   top: 0;
-  z-index: -1;
+  z-index: -3;
   width: 100%;
-  background-color: rgb(17, 17, 17);
+  // background-color: rgb(17, 17, 17);
   // color: rgb(63, 207, 79);
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Hackathon';
-  font-size: 200px;
+  font-size: 80px;
+  background: url('../../assets/backgroundPic1.png');
+  margin: 0;
+  border: 0;
+  padding: 0;
   // -webkit-clip-path: polygon(75% 0, 100% 0%, 24% 100%, 0% 100%);
   // clip-path: polygon(75% 0, 100% 0%, 24% 100%, 0% 100%);
+}
+
+.text1 {
+  position: absolute;
+  left: 10%;
+  top: 20%;
+}
+
+.text2 {
+  position: absolute;
+  left: 15%;
+  bottom: 10%;
+}
+
+.curtain {
 }
 </style>
