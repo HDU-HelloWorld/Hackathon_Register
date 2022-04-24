@@ -22,6 +22,7 @@
           id="curtainPic1"
           data-depth="0.4"
         />
+        <HackIntro class="Hackintro"></HackIntro>
       </div>
       <el-row class="startExplore">
         <el-col :span="2" :offset="11" data-depth="0.3">
@@ -37,7 +38,6 @@
       </el-row>
     </div>
     <div ref="startPosition" class="componentContainer">
-      <!-- <HackIntro class="Hackintro" style="position: fixed"></HackIntro> -->
       <CompitiIntro class="Compitiintro"></CompitiIntro>
       <Notice class="Notice"></Notice>
       <Plan class="Plan"></Plan>
@@ -178,6 +178,6 @@ export default {
   bottom: 10%;
 }
 
-.curtain {
-}
+// .curtain {
+// }
 </style>
