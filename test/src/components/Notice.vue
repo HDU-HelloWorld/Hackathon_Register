@@ -62,7 +62,8 @@
           <el-step title="8.颁奖典礼" description="大赛评委会将在参加产品展示的产品中选出部分优秀产品，予以奖励。"></el-step>
         </el-steps>
         <br>
-          <div class="content">大赛评委会将在参加产品展示的产品中选出部分优秀产品，予以奖励。</div>
+        <br>
+        <div class="content">大赛评委会将在参加产品展示的产品中选出部分优秀产品，予以奖励。</div>
       </el-tab-pane>
       <el-tab-pane label="比赛规则" name="third">
         <h2 class="title">赛前规定</h2>
@@ -99,53 +100,47 @@
               <div class="content">展示需要的局域网需选手自行搭建</div>
               <br>
               <div class="content">项目展示时间为5分钟，届时我们将有严格的时间把控，请各位参赛队伍提前做好相应准备.</div>
-              <br>
             </el-card>
           </el-col>
         </el-row>
       </el-tab-pane>
       <el-tab-pane label="评分规则" name="fourth">
-        <br>
         <h2 class="title">本届赛事评分包括两部分，基础分数（40%）、灵感分数（40%）以及解说分数（20%）。</h2>
-          <br>
           <div class="content">灵感评分部分，评分点主要包括:创意新颖度，重在别出心裁。</div>
           <br>
           <div class="content">灵感评分部分，评分点主要包括:创意新颖度，重在别出心裁。</div>
           <br>
           <div class="content">解说评分部分，评分点主要包括:产品展示流畅度，产品实用性。</div>
           <br>
-          <h2 class="title">技术</h2>
-          <br>
-          <div class="content">产品所需技术难度。</div>
-          <br>
-          <h2 class="title">影响力</h2>
-          <br>
-          <div class="content">产品所解决问题的影响规模。</div>
-          <br>
-          <h2 class="title">实用</h2>
-          <br>
-          <div class="content">产品在现实生活中的实用性。</div>
-          <br>
-          <h2 class="title">设计</h2>
-          <br>
-          <div class="content">产品外观、用户界面和用户体验。</div>
-          <br>
-          <h2 class="title">展示度</h2>
-          <br>
-          <div class="content">团队对产品展示的清晰有条理性。</div>
-          <br>
-          <h2 class="title">创意性</h2>
-          <br>
-          <div class="content">产品的新颖度。是否已有同类产品？差别在哪里？</div>
-          <br>
-          <h2 class="title">作品完成度</h2>
-          <br>
-          <div class="content">评委将根据Demo最终完成情况对作品完成度进行评判。</div>
-          <br>
-          <h2 class="title">代码</h2>
-          <br>
-          <div class="content">参赛队伍将代码提交到活动官方提交平台，在作品提交阶段需向评委组提交作品代码。</div>
-          <br>
+          <el-row :gutter="12">
+          <el-col :span="20">
+            <el-card shadow="always">
+              <h2 class="title">技术</h2>
+              <div class="content">产品所需技术难度。</div>
+              <br>
+              <h2 class="title">影响力</h2>
+              <div class="content">产品所解决问题的影响规模。</div>
+              <br>
+              <h2 class="title">实用</h2>
+              <div class="content">产品在现实生活中的实用性。</div>
+              <br>
+              <h2 class="title">设计</h2>
+              <div class="content">产品外观、用户界面和用户体验。</div>
+              <br>
+              <h2 class="title">展示度</h2>
+              <div class="content">团队对产品展示的清晰有条理性。</div>
+              <br>
+              <h2 class="title">创意性</h2>
+              <div class="content">产品的新颖度。是否已有同类产品？差别在哪里？</div>
+              <br>
+              <h2 class="title">作品完成度</h2>
+              <div class="content">评委将根据Demo最终完成情况对作品完成度进行评判。</div>
+              <br>
+              <h2 class="title">代码</h2>
+              <div class="content">参赛队伍将代码提交到活动官方提交平台，在作品提交阶段需向评委组提交作品代码。</div>
+            </el-card>
+          </el-col>
+        </el-row>
       </el-tab-pane>
     </el-tabs>
   </div>
