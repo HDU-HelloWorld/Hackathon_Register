@@ -3,9 +3,9 @@
     <div class="curtain" :style="'height: ' + Height">
       <div class="enterCurtain" :style="'height: ' + Height">
         <div class="curtainText">
-          <div class="text1" data-depth="0.3">Hackathon</div>
+          <div class="text1">Hackathon</div>
           <br />
-          <div class="text2" data-depth="0.3">「码」力全开</div>
+          <div class="text2">「码」力全开</div>
         </div>
       </div>
       <div class="backCurtain" :style="'height: ' + Height">
@@ -40,8 +40,9 @@
       <HackIntro class="Hackintro"></HackIntro>
     </div>
     <div ref="startPosition" class="componentContainer">
-      <CompitiIntro class="Compitiintro"></CompitiIntro>
+      <div class="whiteblock">???</div>
       <Notice class="Notice"></Notice>
+      <CompitiIntro class="Compitiintro"></CompitiIntro>
       <Plan class="Plan"></Plan>
       <Support class="Support"></Support>
       <ApplyForm class="ApplyForm"></ApplyForm>
@@ -79,6 +80,7 @@ export default {
       })
     })
     window.addEventListener('scroll', () => {
+      // 判断按钮和介绍组件的高度，同时判断按钮状态来决定按钮是否需要飞入/飞出
       if ($('.exploreBtn').offset().top > $('.componentContainer').offset().top && this.btnStatus === 0) {
         this.btnStatus = 1
         $('.exploreBtn').animate({ left: window.innerWidth + 'px' })
@@ -95,10 +97,11 @@ export default {
     parallax.calibrate(true, true)
     parallax.scalar(3, 10)
     let scene1 = document.querySelector('.picBox1')
+    // eslint-disable-next-line
     let parallax1 = new Parallax(scene1)
     // parallax1.friction(0.2, 0.8)
-    parallax1.calibrate(false, false)
-    parallax1.scalar(20, 20)
+    // parallax1.calibrate(false, false)
+    // parallax1.scalar(20, 20)
     // let scene1 = document.querySelectorAll('.curtainText')
     // let parallax1 = new Parallax(scene1[0])
     // let parallax2 = new Parallax(scene1[1])
@@ -177,8 +180,11 @@ export default {
   // clip-path: polygon(75% 0, 100% 0%, 24% 100%, 0% 100%);
 }
 
+// 使用parallax时需要用一个盒子装起所有组件
 .backCurtain1 {
   position: fixed;
+  right: 40%;
+  bottom: -3%;
   z-index: -2;
 }
 
@@ -198,7 +204,13 @@ export default {
 }
 
 .componentContainer {
+  border-top: 300px;
   background-color: #fff;
   z-index: 2;
+}
+
+.whiteblock {
+  width: 100%;
+  height: 300px;
 }
 </style>
