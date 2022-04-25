@@ -1,34 +1,54 @@
 <template>
   <div class="notice">
-  <div>
-    <h2 class="head">参赛须知</h2>
-    <br>
-  </div>
+    <div>
+      <h2 class="head">参赛须知</h2>
+      <br>
+    </div>
     <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
       <el-tab-pane label="参赛流程" name="first">
         <h2 class="title">1.参赛报名：</h2>
-        <br>
-        <div class="content">开发者需以个人身份报名，报名时需提交个人身份信息。需要注意的是，国队参赛每个成员均需单独报名。若已经有国队，清在报名中备注团队报名。</div>
-        <br>
-        <div class="content">主办方会对报名行筛远，报名注册时附带个人简历、项目经历等资料，可提高筛选通过率。</div>
-        <br>
-        <div class="content">若被筛选通过，参赛者的邮箱将会收由大赛主办方发送的《Hack「中国」2018 Hackathon》参赛邀请邮件。故请留下有效邮箱地址。</div>
+        <el-row :gutter="12">
+          <el-col :span="20">
+            <el-card shadow="always">
+              <div class="content">开发者需以个人身份报名，报名时需提交个人身份信息。需要注意的是，国队参赛每个成员均需单独报名。若已经有国队，清在报名中备注团队报名。</div>
+              <br>
+              <div class="content">主办方会对报名行筛远，报名注册时附带个人简历、项目经历等资料，可提高筛选通过率。</div>
+              <br>
+              <div class="content">若被筛选通过，参赛者的邮箱将会收由大赛主办方发送的《Hack「中国」2018 Hackathon》参赛邀请邮件。故请留下有效邮箱地址。</div>
+            </el-card>
+          </el-col>
+        </el-row>
         <br>
         <h2 class="title">2.团队规模：</h2>
-        <br>
-        <div class="content">每个团队2-5人，每人最多选择1个团队加入</div>
-        <br>
-        <div class="content">参赛者提前组队，也可到现场自由组队。</div>
+        <el-row :gutter="12">
+          <el-col :span="20">
+            <el-card shadow="always">
+              <div class="content">每个团队2-5人，每人最多选择1个团队加入</div>
+              <br>
+              <div class="content">参赛者提前组队，也可到现场自由组队。</div>
+            </el-card>
+          </el-col>
+        </el-row>
         <br>
         <h2 class="title">3.活动须知：</h2>
-        <br>
-        <div class="content">参赛者收到的参赛邀请邮件中将附带活动时间表，如无意外，基本活动安排与时间表无异，规定的活动时间内，在具体的活动地点将会有工作人员接应。</div>
-        <br>
-        <div class="content">比赛居时凭借参赛邀请邮件或邀情函进行签到，领取参赛证、身份卡、赛事资料及其他比赛相关物品。</div>
+        <el-row :gutter="12">
+          <el-col :span="20">
+            <el-card shadow="always">
+              <div class="content">参赛者收到的参赛邀请邮件中将附带活动时间表，如无意外，基本活动安排与时间表无异，规定的活动时间内，在具体的活动地点将会有工作人员接应。</div>
+              <br>
+              <div class="content">比赛居时凭借参赛邀请邮件或邀情函进行签到，领取参赛证、身份卡、赛事资料及其他比赛相关物品。</div>
+            </el-card>
+          </el-col>
+        </el-row>
         <br>
         <h2 class="title">4.现场组队：</h2>
-        <br>
-        <div class="content">活动场会设有白板，准备现场组队的开发者可以将身份卡放置于白板上，可标注自己“能做什么，想做什么，在找怎样的人”等等关键词。不同的身份卡用于区分开发者角色，帮助快速组队。</div>
+        <el-row :gutter="12">
+          <el-col :span="20">
+            <el-card shadow="always">
+              <div class="content">活动场会设有白板，准备现场组队的开发者可以将身份卡放置于白板上，可标注自己“能做什么，想做什么，在找怎样的人”等等关键词。不同的身份卡用于区分开发者角色，帮助快速组队。</div>
+            </el-card>
+          </el-col>
+        </el-row>
       </el-tab-pane>
       <el-tab-pane label="比赛流程" name="second">
         <el-steps :active="2" align-center>
@@ -46,33 +66,43 @@
       </el-tab-pane>
       <el-tab-pane label="比赛规则" name="third">
         <h2 class="title">赛前规定</h2>
-          <br>
-          <div class="content">参赛选手请根据邮件中时间表与指定时间到达指定地点，主办方将派工作人员于此接应。</div>
-          <br>
-          <div class="content">参赛选手因故无法按时到达、参加比赛，应尽快联系主办方，并告知详情协商解决方案。</div>
-          <br>
-          <h2 class="title">现场规则</h2>
-          <br>
-          <div class="content">参赛队伍进行24小时开发，不能剽窃他人创意、思路。</div>
-          <br>
-          <div class="content">现场自由交流不能干扰其他队伍开发，禁止大音量外放音乐、观看视频、禁止抽烟。</div>
-          <br>
-          <div class="content">现场提供网络，禁止类似于大流量下载等影响网络的行为。</div>
-          <br>
-          <div class="content">参赛证、身份卡作为识别证件，请随身携带，配合工作人员检查。</div>
-          <br>
-          <div class="content">现场提供餐饮，请勿携带外来食品、饮品带入会场内。</div>
-          <br>
-          <div class="content">测试展示项目所需设备，请于主办方咨询处联系工作人员。</div>
-          <br>
-          <div class="content">测试时间:9:00~12:00。请自行安排时间，避免拥挤。</div>
-          <br>
-          <div class="content">若有VGA视频输出、3.5mm标准音频输出，请尽早测试主办方提供的转接线。</div>
-          <br>
-          <div class="content">展示需要的局域网需选手自行搭建</div>
-          <br>
-          <div class="content">项目展示时间为5分钟，届时我们将有严格的时间把控，请各位参赛队伍提前做好相应准备.</div>
-          <br>
+        <el-row :gutter="12">
+          <el-col :span="20">
+            <el-card shadow="always">
+              <div class="content">参赛选手请根据邮件中时间表与指定时间到达指定地点，主办方将派工作人员于此接应。</div>
+              <br>
+              <div class="content">参赛选手因故无法按时到达、参加比赛，应尽快联系主办方，并告知详情协商解决方案。</div>
+            </el-card>
+          </el-col>
+        </el-row>
+        <br>
+        <h2 class="title">现场规则</h2>
+        <el-row :gutter="12">
+          <el-col :span="20">
+            <el-card shadow="always">
+              <div class="content">参赛队伍进行24小时开发，不能剽窃他人创意、思路。</div>
+              <br>
+              <div class="content">现场自由交流不能干扰其他队伍开发，禁止大音量外放音乐、观看视频、禁止抽烟。</div>
+              <br>
+              <div class="content">现场提供网络，禁止类似于大流量下载等影响网络的行为。</div>
+              <br>
+              <div class="content">参赛证、身份卡作为识别证件，请随身携带，配合工作人员检查。</div>
+              <br>
+              <div class="content">现场提供餐饮，请勿携带外来食品、饮品带入会场内。</div>
+              <br>
+              <div class="content">测试展示项目所需设备，请于主办方咨询处联系工作人员。</div>
+              <br>
+              <div class="content">测试时间:9:00~12:00。请自行安排时间，避免拥挤。</div>
+              <br>
+              <div class="content">若有VGA视频输出、3.5mm标准音频输出，请尽早测试主办方提供的转接线。</div>
+              <br>
+              <div class="content">展示需要的局域网需选手自行搭建</div>
+              <br>
+              <div class="content">项目展示时间为5分钟，届时我们将有严格的时间把控，请各位参赛队伍提前做好相应准备.</div>
+              <br>
+            </el-card>
+          </el-col>
+        </el-row>
       </el-tab-pane>
       <el-tab-pane label="评分规则" name="fourth">
         <br>
