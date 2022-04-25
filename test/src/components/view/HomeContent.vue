@@ -58,11 +58,14 @@ import Support from '../Support.vue'
 import ApplyForm from './ApplyForm'
 // 引入Parallax.js
 import Parallax from 'parallax-js'
+// 引入jQuery
+import $ from 'jquery'
 export default {
   components: { HackIntro, CompitiIntro, Plan, Notice, Support, ApplyForm },
   data () {
     return {
-      Height: window.innerHeight + 'px'
+      Height: window.innerHeight + 'px',
+      btnStatus: 0
     }
   },
   mounted () {
@@ -76,7 +79,13 @@ export default {
       })
     })
     window.addEventListener('scroll', () => {
-
+      if ($('.exploreBtn').offset().top > $('.componentContainer').offset().top && this.btnStatus === 0) {
+        this.btnStatus = 1
+        $('.exploreBtn').animate({ left: window.innerWidth + 'px' })
+      } else if ($('.exploreBtn').offset().top < $('.componentContainer').offset().top && this.btnStatus === 1) {
+        this.btnStatus = 0
+        $('.exploreBtn').animate({ left: '50%' })
+      }
     })
     let scene = document.querySelector('.startExplore')
     let parallax = new Parallax(scene)
@@ -124,6 +133,7 @@ export default {
 
 .startExplore {
   position: fixed;
+  z-index: 0;
   bottom: 5%;
   width: 100%;
   height: 20%;
@@ -159,6 +169,7 @@ export default {
   font-family: 'Hackathon';
   font-size: 80px;
   background: url('../../assets/backgroundPic1.png');
+  background-size: 100%;
   margin: 0;
   border: 0;
   padding: 0;
@@ -188,6 +199,6 @@ export default {
 
 .componentContainer {
   background-color: #fff;
-  z-index: 1;
+  z-index: 2;
 }
 </style>
