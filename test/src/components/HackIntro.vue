@@ -50,20 +50,22 @@ export default {
 </script>
 
 <style lang='less' scopde>
-  .hackintro{
+  .hackintro {
+  overflow: hidden;
   opacity: 0.75;
-  position: relative;
+  position: fixed;
   top:30%;
   left: 5%;
   z-index: -1;
   width: 35%;
+  height: 45%;
   background: black;
   border: 4px solid transparent;
   border-image: linear-gradient(
   to right;rgba(63,207,79), rgb(0,73,255)
   )5 5;
   h1{
-    margin-top:20px;
+    margin-top: 7%;
     color:white;
     text-align: center;
   }

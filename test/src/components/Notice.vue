@@ -1,7 +1,11 @@
 <template>
   <div class="notice">
-    <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane label="参赛须知" name="first">
+  <div>
+    <h2 class="head">参赛须知</h2>
+    <br>
+  </div>
+    <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
+      <el-tab-pane label="参赛流程" name="first">
         <h2 class="title">1.参赛报名：</h2>
         <br>
         <div class="content">开发者需以个人身份报名，报名时需提交个人身份信息。需要注意的是，国队参赛每个成员均需单独报名。若已经有国队，清在报名中备注团队报名。</div>
@@ -134,16 +138,17 @@ export default {
 
 <style lang="less">
 .el-tabs__item:hover {
-    /** 鼠标滑过 item 的样式 */
-    color: red !important;
+  /** 鼠标滑过 item 的样式 */
+  color: #63cf79;
   }
-// .el-tabs__item.is-active {
-//     /**高亮的 tab 样式 */
-//     background: #0e7071 linear-gradient(to left, rgba(0, 255, 0, 0), rgb(47, 42, 98));
-//   }
+.el-tabs__item.is-active {
+  /**高亮的 tab 样式 */
+  color: #63cf79;
+  background: #0e7071 linear-gradient(to left, rgba(0, 255, 0, 0), rgb(47, 42, 98));
+}
 .el-tabs__item{
-font-size:18px;
-flood-color: #0e7071;
+font-size:25px;
+font-family: "Hackathon";
 }
 .notice{
   margin-top: 100px;
@@ -160,6 +165,18 @@ flood-color: #0e7071;
     h2 {
       font-size: 26px;
       line-height: 45px;
+    }
+    .head{
+      font-size: 40px;
+      font-family: "Hackathon";
+      color: #63cf79;
+    }
+    .title{
+        width: 80%;
+        font-size: 20px;
+      }
+    .content{
+      border-radius: 10px;
     }
   }
 </style>
