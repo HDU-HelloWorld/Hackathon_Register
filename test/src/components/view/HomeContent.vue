@@ -200,8 +200,8 @@ export default {
   bottom: 10%;
 }
 
-.curtain {
-}
+// .curtain {
+// }
 
 .componentContainer {
   border-top: 300px;

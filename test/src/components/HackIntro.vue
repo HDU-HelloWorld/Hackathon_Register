@@ -65,7 +65,7 @@ export default {
   to right;rgba(63,207,79), rgb(0,73,255)
   )5 5;
   h1{
-    margin-top: 7%;
+    margin-top: 4%;
     color:white;
     text-align: center;
   }
@@ -75,7 +75,7 @@ export default {
   // }
   .exp{
     font-size: 15px;
-    margin: 30px auto;
+    margin: 20px auto;
     width: 70%;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     // border-radius: 10px;
