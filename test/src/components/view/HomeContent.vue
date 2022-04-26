@@ -41,6 +41,7 @@
     </div>
     <div ref="startPosition" class="componentContainer">
       <div class="whiteblock">???</div>
+      <process class="process"></process>
       <Notice class="Notice"></Notice>
       <Plan class="Plan"></Plan>
       <CompitiIntro class="Compitiintro"></CompitiIntro>
@@ -61,8 +62,9 @@ import ApplyForm from './ApplyForm'
 import Parallax from 'parallax-js'
 // 引入jQuery
 import $ from 'jquery'
+import Process from './process.vue'
 export default {
-  components: { HackIntro, CompitiIntro, Plan, Notice, Support, ApplyForm },
+  components: { HackIntro, CompitiIntro, Plan, Notice, Support, ApplyForm, Process },
   data () {
     return {
       Height: window.innerHeight + 'px',
@@ -200,8 +202,8 @@ export default {
   bottom: 10%;
 }
 
-.curtain {
-}
+// .curtain {
+// }
 
 .componentContainer {
   border-top: 300px;
