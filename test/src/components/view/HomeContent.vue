@@ -42,8 +42,8 @@
     <div ref="startPosition" class="componentContainer">
       <div class="whiteblock">???</div>
       <Notice class="Notice"></Notice>
-      <CompitiIntro class="Compitiintro"></CompitiIntro>
       <Plan class="Plan"></Plan>
+      <CompitiIntro class="Compitiintro"></CompitiIntro>
       <Support class="Support"></Support>
       <ApplyForm class="ApplyForm"></ApplyForm>
     </div>
