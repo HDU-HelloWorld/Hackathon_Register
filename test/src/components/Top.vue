@@ -125,7 +125,7 @@ a {
 }
 .top {
   position: fixed;
-  z-index: 1;
+  z-index: 999;
   min-width: 1000px;
   width: 100%;
   min-width: 800px;
