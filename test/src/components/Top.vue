@@ -39,58 +39,10 @@ export default {
     }
   },
   methods: {
-    showDetail () {
-      this.$bus.$emit('scrool')
-      this.$router.replace({
-        name: '/'
-      })
-    },
-    goHome () {
-      this.$router.replace('/')
-    },
-    showDetail02 () {
-      this.$bus.$emit('scrool-2')
-      this.$router.replace({
-        name: '/'
-      })
-    },
-    showDetail03 () {
-      this.$bus.$emit('scrool-3')
-      this.$router.replace({
-        name: '/'
-      })
-    },
-    showDetail04 () {
-      this.$bus.$emit('scrool-4')
-      this.$router.replace({
-        name: '/'
-      })
-    },
-    showDetail05 () {
-      this.$bus.$emit('scrool-5')
-      this.$router.replace({
-        name: '/'
-      })
-    },
     showLogin () {
       this.$bus.$emit('scrool-6')
       this.$router.replace({
         name: '/'
-      })
-    },
-    changeroutercom () {
-      this.$router.replace({
-        name: 'competerule'
-      })
-    },
-    changeprocess () {
-      this.$router.replace({
-        name: 'process'
-      })
-    },
-    changeroutermark () {
-      this.$router.replace({
-        name: 'evaluaterule'
       })
     }
   }
@@ -100,9 +52,9 @@ export default {
 <style lang='less' scoped>
 .el-menu-demo {
   background-image: linear-gradient(
-    to right; rgba(0, 0, 0, 0.8),
-    rgba(80, 168, 131, 0.7),
-    rgb(7, 42, 28)
+    to right; rgba(28, 91, 193, 0.8),
+    rgba(116, 184, 215, 0.7),
+    rgb(26, 57, 82)
   );
 }
 a {
@@ -149,31 +101,6 @@ img {
   width: 100%;
   min-width: 1000px;
 }
-.top-bottom {
-  min-width: 1000px;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  list-style-type: none;
-  margin-top: 5px;
-  .bottom-left {
-    border: none;
-    outline: none;
-    background-color: transparent;
-    min-width: 130px;
-    margin-top: 20px;
-    margin-left: 50px;
-    height: 40px;
-    line-height: 40px;
-    width: 130px;
-    cursor: pointer;
-    text-align: center;
-    &:hover {
-      border-bottom: 5px solid black;
-      transition: 0.5;
-    }
-  }
-}
 .login {
   position: fixed;
   bottom: 10%;
@@ -187,10 +114,12 @@ img {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    background-color: transparent;
     transition: 0.5s;
     z-index: 1;
     &:hover {
-      color: #fff;
+      color: white;
+      transition: 0.75s;
     }
     &:hover span {
       transform: translateX(-40%) scale(2);

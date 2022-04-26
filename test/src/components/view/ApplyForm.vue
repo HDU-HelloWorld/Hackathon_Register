@@ -10,7 +10,7 @@
         <!-- 下面为一个行内显示示例 -->
         <el-row>
           <el-col :span="12" :offset="0">
-            <el-form-item label="队长" prop="master">
+            <el-form-item label="队长" prop="master" id="m">
               <el-input v-model="form.master"></el-input>
             </el-form-item>
           </el-col>
@@ -207,7 +207,6 @@ export default {
     this.$bus.$on('scrool-6', this.scrool)
   }
 }
-
 </script>
 
 <style scoped>
@@ -231,5 +230,10 @@ export default {
 }
 .requirement {
   height: 10px;
+}
+.el-input /deep/ .el-input__inner {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #666;
 }
 </style>
