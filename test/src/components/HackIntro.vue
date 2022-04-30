@@ -19,10 +19,10 @@
       Hack精神的软件发展相关人员所热衷。
     </div>
     <div class="exp">
-       近年来，Hackathon的主题和类型越来越广泛，
-       有使用特定编程语言、框架或API的，比如Yahoo的“OpenHack Day”;
-       有出于某种原因或目的，比如英国政府与HackerNest联合举办的DementiaHack;
-       以及公司、组织举办的，例如Facebook的Like button.
+      近年来，Hackathon的主题和类型越来越广泛，
+      有使用特定编程语言、框架或API的，比如Yahoo的“OpenHack Day”;
+      有出于某种原因或目的，比如英国政府与HackerNest联合举办的DementiaHack;
+      以及公司、组织举办的，例如Facebook的Like button.
     </div>
   </div>
 </template>

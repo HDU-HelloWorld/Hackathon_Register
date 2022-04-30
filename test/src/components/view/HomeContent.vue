@@ -41,10 +41,10 @@
     </div>
     <div ref="startPosition" class="componentContainer">
       <div class="whiteblock">???</div>
+      <CompitiIntro class="Compitiintro"></CompitiIntro>
       <process class="process"></process>
       <Notice class="Notice"></Notice>
       <Plan class="Plan"></Plan>
-      <CompitiIntro class="Compitiintro"></CompitiIntro>
       <Support class="Support"></Support>
       <ApplyForm class="ApplyForm"></ApplyForm>
     </div>

@@ -41,9 +41,14 @@ export default {
   methods: {
     showLogin () {
       this.$bus.$emit('scrool-6')
-      this.$router.replace({
-        name: '/'
-      })
+    },
+    handleSelect (key, keyPath) {
+      if (key === '2') {
+        window.scrollTo({
+          'top': 500, // emmm之后应该是写成一个变量的形式改变
+          'behavior': 'smooth'
+        })
+      }
     }
   }
 }

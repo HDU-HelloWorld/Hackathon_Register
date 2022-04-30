@@ -40,13 +40,6 @@ export default {
     this.$bus.$on('scrool-2', this.scrool)
   },
   methods: {
-    scrool () {
-      let toptwo = document.querySelector('#scr')
-      window.scrollTo({
-        'top': toptwo.offsetTop,
-        'behavior': 'smooth'
-      })
-    },
     jumpto () {
       document.querySelector('.scr').scrollIntoView()
     }
